@@ -26,7 +26,10 @@ public class Interactuar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            interactuableActual.Interactuar();
+            if(interactuableActual != null)
+            {
+                interactuableActual.Interactuar();
+            }
         }
 
         RaycastHit hit;
