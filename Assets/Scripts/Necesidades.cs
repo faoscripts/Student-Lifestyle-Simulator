@@ -19,10 +19,10 @@ public class Necesidades
     public void AddNecesidad(float i)
     {
         valor += i * multiplicadorVelocidad;
-        if (!chute)
-        {
-            valor = Mathf.Clamp(valor, 0, Mathf.Infinity);
-        }
+        // if (!chute)
+        // {
+        //     valor = Mathf.Clamp(valor, 0, Mathf.Infinity);
+        // }
         valor = Mathf.Clamp(valor, 0, valorMaximo);
     }
 }
