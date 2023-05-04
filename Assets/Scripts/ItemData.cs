@@ -9,7 +9,7 @@ public class ItemData : ScriptableObject
     [Header("info")]
     public string nombre;
     public EquipType equipable;
-    public GrabType tipoCoger;
+    public bool grab;
 
     public Necesidades[] statsSuma;
     public Necesidades[] statsRestar;
