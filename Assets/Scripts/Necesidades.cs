@@ -8,8 +8,8 @@ public class Necesidades
     public string nombre;
     public float valor;
     public float valorMaximo = 100;
+    public float multiplicadorVelocidad;
     public bool necesidadVital;
-    public bool chute;
 
     public void SetNecesidad(float i)
     {
@@ -18,7 +18,7 @@ public class Necesidades
 
     public void AddNecesidad(float i)
     {
-        valor += i;
+        valor += i * multiplicadorVelocidad;
         if (!chute)
         {
             valor = Mathf.Clamp(valor, 0, Mathf.Infinity);
