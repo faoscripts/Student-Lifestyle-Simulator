@@ -8,7 +8,6 @@ public class CameraFP : MonoBehaviour
     public float sensY;
     public Transform playerBody;
     float rotationX;
-    // float rotationY;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +21,6 @@ public class CameraFP : MonoBehaviour
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
-
-        // rotationY += mouseX;
 
         rotationX -= mouseY;
         rotationX = Mathf.Clamp(rotationX, -90f, 90f);
