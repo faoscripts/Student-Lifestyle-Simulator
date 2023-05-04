@@ -3,7 +3,12 @@ guid: 91dca6bde5fb2f74f897ffc5077274d7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mapa
+    second: {fileID: 2100000, guid: 8490ae7608472b54ea3f75299c0803dd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
