@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemController : MonoBehaviour, IInteractuable
 {
-    public InteractuableData item;
+    public ItemData item;
 
     public void Interactuar()
     {
@@ -14,7 +14,10 @@ public class ItemController : MonoBehaviour, IInteractuable
         //    EquipoManager.instancia.Equipar(item);
         //    Destroy(gameObject);
         //}
-        
+    }
 
+    private void Update()
+    {
+        
     }
 }
