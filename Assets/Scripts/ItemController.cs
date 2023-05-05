@@ -18,15 +18,16 @@ public class ItemController : MonoBehaviour, IInteractuable
             GameObject.Find("Hand").SetActive(false);
             
             GameObject handCamera = GameObject.Find("HandCamera");
-            print("instantiate");
             GameObject itemInstance = Instantiate(item.equipoPrefab, handCamera.transform.position, Quaternion.identity, handCamera.transform);
             // itemInstance.transform.parent = handCamera.transform;
             itemInstance.transform.GetChild(0).gameObject.AddComponent<Rigidbody>().isKinematic = true;
-            print("item.equipoPrefab.transform.position = " + item.equipoPrefab.transform.position);
             itemInstance.transform.localPosition = item.equipoPrefab.transform.position;
             itemInstance.transform.localRotation = item.equipoPrefab.transform.rotation;
+            print("layer item name = " + itemInstance.name);
+            int LayerHand = LayerMask.NameToLayer("Hand");
+            itemInstance.transform.GetChild(0).gameObject.layer = LayerHand;
             PlayerMovement.itemSlot = itemInstance;
-            if (item.consumible) Destroy(gameObject);
+            Destroy(gameObject);
             PlayerMovement.swDrop = true;
         }
         //if (InventoryController.instance.imageSlot[i].GetComponent<Image>().sprite == null)

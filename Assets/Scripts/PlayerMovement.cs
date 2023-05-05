@@ -43,8 +43,11 @@ public class PlayerMovement : MonoBehaviour
                 print("-n.valor = " + -n.valor);
                 nc.SetNecesidadPlayer(n);
             }
-            defaultHand.SetActive(true);
-            Destroy(itemSlot);
+
+            if (item.GetComponent<ItemController>().item.consumible) {
+                Destroy(item);
+                defaultHand.SetActive(true);
+            }
 
 
         }
@@ -61,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
                 item.GetComponent<Rigidbody>().isKinematic = false;
                 item.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength);
                 item.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+                int LayerDefault = LayerMask.NameToLayer("Default");
+                item.layer = LayerDefault;
             }
             // Destroy(itemSlot.transform.GetChild(1).gameObject);
             Destroy(itemSlot.gameObject);
