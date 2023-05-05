@@ -44,6 +44,7 @@ public class CicloDiaYNoche : MonoBehaviour
         contadorDias = 1;
         relojActivo = true;
         StartCoroutine("RelojContador");
+        txtDia.gameObject.SetActive(false);
     }
 
     IEnumerator RelojContador()
@@ -110,7 +111,10 @@ public class CicloDiaYNoche : MonoBehaviour
             nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a + 0.1f);
             yield return new WaitForSeconds(0.02f);
         }
+
+        txtDia.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
+        txtDia.gameObject.SetActive(false);
 
         while (nuevoDia.color.a > 0)
         {
