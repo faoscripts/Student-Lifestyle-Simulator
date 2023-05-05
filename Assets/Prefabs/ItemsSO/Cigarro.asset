@@ -15,7 +15,12 @@ MonoBehaviour:
   nombre: 
   equipable: 0
   grab: 0
-  statsSuma: []
+  statsSuma:
+  - nombre: Salud Mental
+    valor: 10
+    valorMaximo: 0
+    multiplicadorVelocidad: 0.2
+    necesidadVital: 0
   statsRestar: []
   equipoPrefab: {fileID: 0}
   itemWeight: 0

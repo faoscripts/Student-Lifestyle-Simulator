@@ -17,7 +17,7 @@ MonoBehaviour:
   grab: 1
   statsSuma:
   - nombre: Salud Mental
-    valor: 40
+    valor: 30
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
     multiplicadorVelocidad: 0
     necesidadVital: 0
   - nombre: Saciedad
-    valor: 40
+    valor: 20
     valorMaximo: 100
     multiplicadorVelocidad: 0
     necesidadVital: 0

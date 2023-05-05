@@ -28,17 +28,20 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null){
             GameObject item = itemSlot.transform.GetChild(0).gameObject;
             Necesidades[] statsSuma = item.GetComponent<ItemController>().item.statsSuma;
+            NecesidadController nc = GetComponent<NecesidadController>();
             
             foreach(Necesidades n in statsSuma)
             {
-                n.AddNecesidad(n.valor);
+                nc.SetNecesidadPlayer(n);
             }
 
             Necesidades[] statsResta = item.GetComponent<ItemController>().item.statsRestar;
             
             foreach(Necesidades n in statsResta)
             {
-                n.AddNecesidad(-n.valor);
+                n.valor = -(n.valor);
+                print("-n.valor = " + -n.valor);
+                nc.SetNecesidadPlayer(n);
             }
             defaultHand.SetActive(true);
             Destroy(itemSlot);

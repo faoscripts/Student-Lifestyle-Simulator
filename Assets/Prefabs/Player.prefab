@@ -826,12 +826,12 @@ MonoBehaviour:
     valor: 0
     valorMaximo: 100
     multiplicadorVelocidad: 1
-    necesidadVital: 1
+    necesidadVital: 0
   - nombre: Pis
     valor: 0
     valorMaximo: 100
     multiplicadorVelocidad: 1
-    necesidadVital: 1
+    necesidadVital: 0
 --- !u!114 &3778260075801325025
 MonoBehaviour:
   m_ObjectHideFlags: 0
