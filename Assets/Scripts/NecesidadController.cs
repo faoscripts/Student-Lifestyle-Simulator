@@ -10,6 +10,8 @@ public class NecesidadController : MonoBehaviour
 
     [SerializeField]
     Necesidades[] necesidades;
+    [SerializeField]
+    
 
     // Update is called once per frame
     void Update()
@@ -17,11 +19,30 @@ public class NecesidadController : MonoBehaviour
         multiplicadorSalud = 0;
         foreach(Necesidades n in necesidades)
         {
-            if(n.necesidadVital && n.valor <= 0)
+            if(n.necesidadVital)
             {
-                multiplicadorSalud++;
+                n.AddNecesidad(-Time.deltaTime / 3, 0);
+                if(n.valor <= n.valorMaximo)
+                {
+                    multiplicadorSalud++;
+                }
             }
-            n.AddNecesidad(-Time.deltaTime/3);
+            else
+            {
+                n.AddNecesidad(Time.deltaTime / 3, 0);
+                if(n.valor >= 100)
+                {
+                    foreach(Necesidades i in necesidades)
+                    {
+                        if(i.nombre == "Higiene")
+                        {
+                            i.valor = i.valorMaximo;
+                        }
+                    }
+                    n.valor = 0;
+                }
+            }
+            
         }
         salud -= Time.deltaTime * multiplicadorSalud;
     }
