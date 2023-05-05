@@ -354,6 +354,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 9030459912508939901}
   speed: 6
+  throwStrength: 100
+  defaultHand: {fileID: 5436284853786302169}
 --- !u!114 &8921483282723889973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b735b65977f3f844817ba7a3313ac55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaInteraccion: 0
+  distanciaInteraccion: 1.5
   layerRaycast:
     serializedVersion: 2
     m_Bits: 1
@@ -468,10 +470,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3380655851225576472}
   - component: {fileID: 8220012984588770129}
-  - component: {fileID: 8185253410525278978}
   - component: {fileID: 7115820829866897357}
   m_Layer: 0
-  m_Name: Hand Camera
+  m_Name: HandCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,14 +537,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8185253410525278978
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4040662344833834743}
-  m_Enabled: 1
 --- !u!114 &7115820829866897357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,7 +828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4706ab3eebb66dc468440def42836f95, type: 3}
       propertyPath: m_Name
-      value: Mano
+      value: Hand
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4706ab3eebb66dc468440def42836f95, type: 3}
       propertyPath: m_Layer
@@ -946,5 +939,10 @@ PrefabInstance:
 --- !u!4 &4628082936773905507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4706ab3eebb66dc468440def42836f95, type: 3}
+  m_PrefabInstance: {fileID: 5165903188587047816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5436284853786302169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4706ab3eebb66dc468440def42836f95, type: 3}
   m_PrefabInstance: {fileID: 5165903188587047816}
   m_PrefabAsset: {fileID: 0}
