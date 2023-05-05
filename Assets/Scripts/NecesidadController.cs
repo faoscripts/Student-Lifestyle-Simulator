@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NecesidadController : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class NecesidadController : MonoBehaviour
     [SerializeField]
     Necesidades[] necesidades;
     [SerializeField]
-    
+    Slider[] slidersNecesidadesVitales;
+    [SerializeField]
+    Slider[] slidersNecesidadesSecundarias;
 
     // Update is called once per frame
     void Update()
@@ -22,10 +25,12 @@ public class NecesidadController : MonoBehaviour
             if(n.necesidadVital)
             {
                 n.AddNecesidad(-Time.deltaTime / 3);
+                
                 if(n.valor <= 0)
                 {
                     multiplicadorSalud++;
                 }
+
             }
             else
             {
@@ -37,10 +42,12 @@ public class NecesidadController : MonoBehaviour
                         if(i.nombre == "Higiene")
                         {
                             i.valor = i.valorMaximo;
+                            break;
                         }
                     }
                     n.valor = 0;
                 }
+
             }
             
         }
