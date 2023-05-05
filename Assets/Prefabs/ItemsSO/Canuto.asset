@@ -17,4 +17,6 @@ MonoBehaviour:
   grab: 1
   statsSuma: []
   statsRestar: []
-  equipoPrefab: {fileID: 7660659342925825181, guid: 0bd396c11c2ba9942bb3cd81967d7915, type: 3}
+  equipoPrefab: {fileID: 4347642715316700435, guid: e32268779f99dda4a8259505a077100f, type: 3}
+  itemWeight: 0.5
+  consumible: 1

@@ -17,6 +17,7 @@ public class ItemData : ScriptableObject
     [Header("Equipable")]
     public GameObject equipoPrefab;
     public float itemWeight;
+    public bool consumible;
 }
 
 public enum EquipType

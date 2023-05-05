@@ -7,17 +7,25 @@ public class ItemController : MonoBehaviour, IInteractuable
 {
     public ItemData item;
 
+    void Start(){
+        gameObject.AddComponent<Rigidbody>();
+        GetComponent<Rigidbody>().mass = item.itemWeight;
+    }
+
     public void Interactuar()
     {
-        print("enter Itenractuar item controller");
         if (item.grab && PlayerMovement.itemSlot == null) {
-            print("enter Itenractuar item controller 2");
-            GameObject hand = GameObject.Find("Hand");
-            GameObject itemInstance = Instantiate(item.equipoPrefab, hand.transform.position, Quaternion.identity);
-            itemInstance.transform.parent = hand.transform;
-            itemInstance.GetComponent<Rigidbody>().isKinematic = true;
-            itemInstance.GetComponent<Rigidbody>().mass = item.itemWeight;
+            GameObject.Find("Hand").SetActive(false);
+            
+            GameObject handCamera = GameObject.Find("HandCamera");
+            GameObject itemInstance = Instantiate(item.equipoPrefab, handCamera.transform.position, Quaternion.identity, handCamera.transform);
+            // itemInstance.transform.parent = handCamera.transform;
+            itemInstance.transform.GetChild(0).gameObject.AddComponent<Rigidbody>().isKinematic = true;
+            print("item.equipoPrefab.transform.position = " + item.equipoPrefab.transform.position);
+            itemInstance.transform.localPosition = item.equipoPrefab.transform.position;
+            itemInstance.transform.localRotation = item.equipoPrefab.transform.rotation;
             PlayerMovement.itemSlot = itemInstance;
+            if (item.consumible) Destroy(gameObject);
             PlayerMovement.swDrop = true;
         }
         //if (InventoryController.instance.imageSlot[i].GetComponent<Image>().sprite == null)

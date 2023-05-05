@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public static GameObject itemSlot;
     [SerializeField] float throwStrength;
     public static bool swDrop = true;
+    [SerializeField] GameObject defaultHand;
 
     // Update is called once per frame
     void Update()
@@ -34,8 +35,10 @@ public class PlayerMovement : MonoBehaviour
             if (swDrop) { swDrop = !swDrop; return; }
             // GameObject item = itemSlot.transform.GetChild(0).gameObject;
             itemSlot.transform.parent = null;
-            itemSlot.GetComponent<Rigidbody>().isKinematic = false;
-            itemSlot.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength);
+            itemSlot.GetComponentInChildren<Rigidbody>().isKinematic = false;
+            itemSlot.GetComponentInChildren<Rigidbody>().AddForce(transform.forward * throwStrength);
+            Destroy(itemSlot.transform.GetChild(1).gameObject);
+            defaultHand.SetActive(true);
             itemSlot = null;
         }
     }
