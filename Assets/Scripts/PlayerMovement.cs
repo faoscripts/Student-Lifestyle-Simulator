@@ -26,20 +26,46 @@ public class PlayerMovement : MonoBehaviour
 
     void Action(){
         if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null){
-            print("enter Action item");
+            GameObject item = itemSlot.transform.GetChild(0).gameObject;
+            Necesidades[] statsSuma = item.GetComponent<ItemController>().item.statsSuma;
+            NecesidadController nc = GetComponent<NecesidadController>();
+            
+            foreach(Necesidades n in statsSuma)
+            {
+                nc.SetNecesidadPlayer(n);
+            }
+
+            Necesidades[] statsResta = item.GetComponent<ItemController>().item.statsRestar;
+            
+            foreach(Necesidades n in statsResta)
+            {
+                n.valor = -(n.valor);
+                print("-n.valor = " + -n.valor);
+                nc.SetNecesidadPlayer(n);
+            }
+            defaultHand.SetActive(true);
+            Destroy(itemSlot);
+
+
         }
     }
 
     void Drop(){
         if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
             if (swDrop) { swDrop = !swDrop; return; }
-            // GameObject item = itemSlot.transform.GetChild(0).gameObject;
-            itemSlot.transform.parent = null;
-            itemSlot.GetComponentInChildren<Rigidbody>().isKinematic = false;
-            itemSlot.GetComponentInChildren<Rigidbody>().AddForce(transform.forward * throwStrength);
-            Destroy(itemSlot.transform.GetChild(1).gameObject);
+            // itemSlot is Mano
+            // item is Porro
+            GameObject item = itemSlot.transform.GetChild(0).gameObject;
+            item.transform.parent = null;
+            if(item.GetComponent<Rigidbody>()){
+                item.GetComponent<Rigidbody>().isKinematic = false;
+                item.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength);
+                item.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+            }
+            // Destroy(itemSlot.transform.GetChild(1).gameObject);
+            Destroy(itemSlot.gameObject);
             defaultHand.SetActive(true);
-            itemSlot = null;
+            // itemSlot = null;
         }
     }
 

@@ -2,15 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CicloDiaYNoche : MonoBehaviour
 {
+    float contadorDias;
     bool dia;
     [SerializeField]
     float velocidad;
     [SerializeField]
     GameObject sol;
     float exposure;
+
+    [Header("-----Slider-----")]
+    [SerializeField]
+    Slider sliderSolLuna;
+    [SerializeField]
+    Image sliderHandle;
+    [SerializeField]
+    Sprite solSprite;
+    [SerializeField]
+    Sprite lunaSprite;
 
     [Header("-----Reloj-----")]
     [SerializeField]
@@ -22,6 +34,7 @@ public class CicloDiaYNoche : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        contadorDias = 1;
         relojActivo = true;
         StartCoroutine("RelojContador");
     }
@@ -52,7 +65,10 @@ public class CicloDiaYNoche : MonoBehaviour
                 horas = 0;
                 minutosTotales = 0;
             }
+
             txtReloj.text = (horas.ToString("D2")) + " : " + (minutos.ToString("D2"));
+            
+            //SKYBOX EXPOSURE
             if(horas < 12)
             {
                 exposure += 1f / 720f;
@@ -61,11 +77,30 @@ public class CicloDiaYNoche : MonoBehaviour
             {
                 exposure -= 1f / 720f;
             }
-
-            print(exposure);
-
             RenderSettings.skybox.SetFloat("_Exposure", exposure);
+
+            //SLIDER
+            if (sliderSolLuna.value < 1)
+            {
+                sliderSolLuna.value += 1f / 1440;
+            }
+            else{
+                sliderSolLuna.value = 0;
+            }
+            
+            if(horas == 6)
+            {
+                sliderHandle.sprite = solSprite;
+                dia = true;
+            }
+            if(horas == 20)
+            {
+                sliderHandle.sprite = lunaSprite;
+                dia = false;
+            }
+
             sol.transform.Rotate(Vector3.right * 0.25f);
         }   
     }
+
 }
