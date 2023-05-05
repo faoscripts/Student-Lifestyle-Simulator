@@ -8,7 +8,7 @@ public class ItemController : MonoBehaviour, IInteractuable
     public ItemData item;
 
     void Start(){
-        gameObject.AddComponent<Rigidbody>();
+        if(gameObject.GetComponent<Rigidbody>() == null) gameObject.AddComponent<Rigidbody>();
         GetComponent<Rigidbody>().mass = item.itemWeight;
     }
 
@@ -18,6 +18,7 @@ public class ItemController : MonoBehaviour, IInteractuable
             GameObject.Find("Hand").SetActive(false);
             
             GameObject handCamera = GameObject.Find("HandCamera");
+            print("instantiate");
             GameObject itemInstance = Instantiate(item.equipoPrefab, handCamera.transform.position, Quaternion.identity, handCamera.transform);
             // itemInstance.transform.parent = handCamera.transform;
             itemInstance.transform.GetChild(0).gameObject.AddComponent<Rigidbody>().isKinematic = true;
