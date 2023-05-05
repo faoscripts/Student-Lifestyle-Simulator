@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CicloDiaYNoche : MonoBehaviour
 {
+    float contadorDias;
     bool dia;
     [SerializeField]
     float velocidad;
@@ -33,6 +34,7 @@ public class CicloDiaYNoche : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        contadorDias = 1;
         relojActivo = true;
         StartCoroutine("RelojContador");
     }
@@ -100,4 +102,5 @@ public class CicloDiaYNoche : MonoBehaviour
             sol.transform.Rotate(Vector3.right * 0.25f);
         }   
     }
+
 }
