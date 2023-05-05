@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1694455078}
-  m_IndirectSpecularColor: {r: 0.36352697, g: 0.3939333, b: 0.4838897, a: 1}
+  m_IndirectSpecularColor: {r: 0.0020449061, g: 0.0022160048, b: 0.0027220424, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1117,8 +1117,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583769615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9, y: -7.3, z: 1.4}
-  m_LocalScale: {x: 74.9285, y: 12.676, z: 20.605928}
+  m_LocalPosition: {x: -4.9, y: -7.1, z: -6.2}
+  m_LocalScale: {x: 74.9285, y: 12.676, z: 38.273296}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2425,11 +2425,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: InicioDia
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: ad15d7f85d8b3de4fb29e13d78aacd57, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
-    autoPlay: 0
+    loop: 1
+    autoPlay: 1
     source: {fileID: 0}
 --- !u!4 &1913045882 stripped
 Transform:
