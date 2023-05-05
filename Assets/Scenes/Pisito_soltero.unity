@@ -1478,6 +1478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cervesa (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1040392427857095302, guid: 880fe4e217ab47446aae533d51456054, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880fe4e217ab47446aae533d51456054, type: 3}
 --- !u!1001 &1173194005
