@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuPrinipal.unity
+    guid: 8766b495f2f6f3b4bb050349330f0245
+  - enabled: 1
+    path: Assets/Scenes/Pisito_soltero.unity
+    guid: b59b345f32b1e094394bb9b10ece2452
   m_configObjects: {}

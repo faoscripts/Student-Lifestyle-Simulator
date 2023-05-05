@@ -471,7 +471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Student\nLifestyle \nSimulator"
+  m_text: "Estudiante\nLifestyle \nSimulator"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1699,6 +1699,8 @@ MonoBehaviour:
   solSprite: {fileID: 21300000, guid: abbdb2657fccab64d9d3eec8522d6348, type: 3}
   lunaSprite: {fileID: 21300000, guid: 0f83e2bdc405e204b8c3cef35aa258de, type: 3}
   txtReloj: {fileID: 1760509833}
+  nuevoDia: {fileID: 0}
+  txtDia: {fileID: 0}
 --- !u!224 &1009061826
 RectTransform:
   m_ObjectHideFlags: 0
