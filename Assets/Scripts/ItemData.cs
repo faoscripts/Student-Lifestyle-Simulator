@@ -16,15 +16,11 @@ public class ItemData : ScriptableObject
 
     [Header("Equipable")]
     public GameObject equipoPrefab;
+    public float itemWeight;
 }
 
 public enum EquipType
 {
     Equipable,
     NoEquipable
-}
-
-public enum GrabType
-{
-    
 }

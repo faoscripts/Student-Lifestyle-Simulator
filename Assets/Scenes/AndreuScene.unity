@@ -465,6 +465,10 @@ PrefabInstance:
       propertyPath: distanciaInteraccion
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8280658277284317664, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: throwStrength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9188606129632548328, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
       propertyPath: m_RootOrder
       value: 3

@@ -6,35 +6,25 @@ using UnityEngine.UI;
 public class ItemController : MonoBehaviour, IInteractuable
 {
     public ItemData item;
-    [SerializeField] float throwStrength;
 
     public void Interactuar()
     {
+        print("enter Itenractuar item controller");
         if (item.grab && PlayerMovement.itemSlot == null) {
+            print("enter Itenractuar item controller 2");
             GameObject hand = GameObject.Find("Hand");
             GameObject itemInstance = Instantiate(item.equipoPrefab, hand.transform.position, Quaternion.identity);
             itemInstance.transform.parent = hand.transform;
             itemInstance.GetComponent<Rigidbody>().isKinematic = true;
+            itemInstance.GetComponent<Rigidbody>().mass = item.itemWeight;
             PlayerMovement.itemSlot = itemInstance;
-            print("enter intsntacne");
-        }else{
-            Drop();
+            PlayerMovement.swDrop = true;
         }
         //if (InventoryController.instance.imageSlot[i].GetComponent<Image>().sprite == null)
         //{
         //    EquipoManager.instancia.Equipar(item);
         //    Destroy(gameObject);
         //}
-    }
-
-    void Drop(){
-        GameObject itemSlot = PlayerMovement.itemSlot;
-        if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
-            // GameObject item = itemSlot.transform.GetChild(0).gameObject;
-            itemSlot.transform.parent = null;
-            itemSlot.GetComponent<Rigidbody>().isKinematic = false;
-            itemSlot.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength);
-        }
     }
 
     private void Update()

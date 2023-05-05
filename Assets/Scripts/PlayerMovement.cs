@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public float speed;
     public static GameObject itemSlot;
+    [SerializeField] float throwStrength;
+    public static bool swDrop = true;
 
     // Update is called once per frame
     void Update()
@@ -18,12 +20,23 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
         
         Action();
-        // Drop();
+        Drop();
     }
 
     void Action(){
         if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null){
             print("enter Action item");
+        }
+    }
+
+    void Drop(){
+        if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
+            if (swDrop) { swDrop = !swDrop; return; }
+            // GameObject item = itemSlot.transform.GetChild(0).gameObject;
+            itemSlot.transform.parent = null;
+            itemSlot.GetComponent<Rigidbody>().isKinematic = false;
+            itemSlot.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength);
+            itemSlot = null;
         }
     }
 
