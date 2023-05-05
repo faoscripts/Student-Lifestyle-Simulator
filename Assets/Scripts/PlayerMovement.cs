@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
             Necesidades[] statsResta = item.GetComponent<ItemController>().item.statsRestar;
             
-            foreach(Necesidades n in statsSuma)
+            foreach(Necesidades n in statsResta)
             {
                 n.AddNecesidad(-n.valor);
             }

@@ -16,19 +16,19 @@ MonoBehaviour:
   equipable: 0
   grab: 1
   statsSuma:
-  - nombre: Cansancio
+  - nombre: Salud Mental
     valor: 40
-    valorMaximo: 100
-    multiplicadorVelocidad: 0
-    necesidadVital: 0
-  - nombre: Hambre
-    valor: 20
-    valorMaximo: 100
+    valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
   statsRestar:
-  - nombre: Ansiedad
-    valor: 20
+  - nombre: "Energ\xEDa"
+    valor: 40
+    valorMaximo: 0
+    multiplicadorVelocidad: 0
+    necesidadVital: 0
+  - nombre: Saciedad
+    valor: 40
     valorMaximo: 100
     multiplicadorVelocidad: 0
     necesidadVital: 0
