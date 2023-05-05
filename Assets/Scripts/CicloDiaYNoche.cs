@@ -7,12 +7,13 @@ using UnityEngine.UI;
 public class CicloDiaYNoche : MonoBehaviour
 {
     float contadorDias;
+    
     bool dia;
     [SerializeField]
     float velocidad;
     [SerializeField]
     GameObject sol;
-    float exposure;
+    float exposure;    
 
     [Header("-----Slider-----")]
     [SerializeField]
@@ -31,6 +32,12 @@ public class CicloDiaYNoche : MonoBehaviour
     int horas;
     int minutos;
 
+    [Header("-----Nuevo Dia-----")]
+    [SerializeField]
+    Image nuevoDia;
+    [SerializeField]
+    TextMeshProUGUI txtDia;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,22 +46,13 @@ public class CicloDiaYNoche : MonoBehaviour
         StartCoroutine("RelojContador");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-
-    }
-
     IEnumerator RelojContador()
     {
         while (relojActivo)
         {
-            float minutosTotales = 0;
             RenderSettings.skybox.SetFloat("_Exposure", exposure);
             yield return new WaitForSeconds(velocidad);
             minutos++;
-            minutosTotales++;
             if (minutos >= 60)
             {
                 minutos = 0;
@@ -62,8 +60,7 @@ public class CicloDiaYNoche : MonoBehaviour
             }
             if (horas >= 24)
             {
-                horas = 0;
-                minutosTotales = 0;
+                StartCoroutine("NuevoDia");
             }
 
             txtReloj.text = (horas.ToString("D2")) + " : " + (minutos.ToString("D2"));
@@ -103,4 +100,27 @@ public class CicloDiaYNoche : MonoBehaviour
         }   
     }
 
+    IEnumerator NuevoDia()
+    {
+        horas = 0;
+        contadorDias++;
+        txtDia.text = "Día " + contadorDias;
+        while (nuevoDia.color.a < 1)
+        {
+            nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a + 0.1f);
+            yield return new WaitForSeconds(0.02f);
+        }
+        yield return new WaitForSeconds(1);
+
+        while (nuevoDia.color.a > 0)
+        {
+            nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a - 0.1f);
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+
+    public void FundidoANegro()
+    {
+        StartCoroutine("NuevoDia");
+    }
 }
