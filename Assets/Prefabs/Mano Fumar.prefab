@@ -1093,6 +1093,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ed81c28e46dc754a9eb13ec0c778585, type: 3}
+--- !u!1 &2697670745795573460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6887533654057500523, guid: 3ed81c28e46dc754a9eb13ec0c778585, type: 3}
+  m_PrefabInstance: {fileID: 8855592122221234623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6165074817921117788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697670745795573460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c677e3dcfa73347834303f5d889450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Accion
+    clip: {fileID: 8300000, guid: f843339e0b9e2244181b18f3052f325b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    source: {fileID: 0}
 --- !u!4 &3331500357312048238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6115536386999543249, guid: 3ed81c28e46dc754a9eb13ec0c778585, type: 3}
