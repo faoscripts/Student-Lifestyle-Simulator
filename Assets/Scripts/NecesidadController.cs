@@ -21,15 +21,15 @@ public class NecesidadController : MonoBehaviour
         {
             if(n.necesidadVital)
             {
-                n.AddNecesidad(-Time.deltaTime / 3, 0);
-                if(n.valor <= n.valorMaximo)
+                n.AddNecesidad(-Time.deltaTime / 3);
+                if(n.valor <= 0)
                 {
                     multiplicadorSalud++;
                 }
             }
             else
             {
-                n.AddNecesidad(Time.deltaTime / 3, 0);
+                n.AddNecesidad(Time.deltaTime / 3);
                 if(n.valor >= 100)
                 {
                     foreach(Necesidades i in necesidades)

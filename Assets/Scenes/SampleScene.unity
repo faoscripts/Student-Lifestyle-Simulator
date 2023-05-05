@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.20646584, g: 0.22373381, b: 0.27483162, a: 1}
+  m_IndirectSpecularColor: {r: 0.0012310378, g: 0.0013340403, b: 0.0016386308, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -138,6 +138,14 @@ PrefabInstance:
       propertyPath: sol
       value: 
       objectReference: {fileID: 705507993}
+    - target: {fileID: 831826687, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 831826687, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 173
+      objectReference: {fileID: 0}
     - target: {fileID: 868049126, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -149,6 +157,46 @@ PrefabInstance:
     - target: {fileID: 3520156007769206589, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[6].necesidadVital
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[7].necesidadVital
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[0].multiplicadorVelocidad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[1].multiplicadorVelocidad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[2].multiplicadorVelocidad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[3].multiplicadorVelocidad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[4].multiplicadorVelocidad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[5].multiplicadorVelocidad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[6].multiplicadorVelocidad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921483282723889973, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: necesidades.Array.data[7].multiplicadorVelocidad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9188606129632548328, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
       propertyPath: m_RootOrder
