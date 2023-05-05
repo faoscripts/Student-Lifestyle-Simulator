@@ -15,8 +15,23 @@ MonoBehaviour:
   nombre: Canuto
   equipable: 0
   grab: 1
-  statsSuma: []
-  statsRestar: []
+  statsSuma:
+  - nombre: Cansancio
+    valor: 40
+    valorMaximo: 100
+    multiplicadorVelocidad: 0
+    necesidadVital: 0
+  - nombre: Hambre
+    valor: 20
+    valorMaximo: 100
+    multiplicadorVelocidad: 0
+    necesidadVital: 0
+  statsRestar:
+  - nombre: Ansiedad
+    valor: 20
+    valorMaximo: 100
+    multiplicadorVelocidad: 0
+    necesidadVital: 0
   equipoPrefab: {fileID: 4347642715316700435, guid: e32268779f99dda4a8259505a077100f, type: 3}
   itemWeight: 0.5
   consumible: 1
