@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (item.GetComponent<ItemController>().item.consumible) {
-                Destroy(item);
+                Destroy(itemSlot);
                 defaultHand.SetActive(true);
             }
 
