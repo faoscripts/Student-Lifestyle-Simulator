@@ -16,13 +16,14 @@ public class Necesidades
         valor = i;
     }
 
-    public void AddNecesidad(float i)
+    public void AddNecesidad(float val, float mult)
     {
-        valor += i * multiplicadorVelocidad;
+        valor += val * multiplicadorVelocidad;
         // if (!chute)
         // {
         //     valor = Mathf.Clamp(valor, 0, Mathf.Infinity);
         // }
         valor = Mathf.Clamp(valor, 0, valorMaximo);
+        multiplicadorVelocidad += mult;
     }
 }
