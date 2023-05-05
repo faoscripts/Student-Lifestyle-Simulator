@@ -27,7 +27,11 @@ public class PlayerMovement : MonoBehaviour
     void Action(){
         if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null){
             GameObject item = itemSlot.transform.GetChild(0).gameObject;
-            item.GetComponent<AudioManager>().Play("Accion");
+            if(item.GetComponent<AudioManager>() != null)
+            {
+                item.GetComponent<AudioManager>().Play("Accion");
+            }
+            
             Necesidades[] statsSuma = item.GetComponent<ItemController>().item.statsSuma;
             NecesidadController nc = GetComponent<NecesidadController>();
             
