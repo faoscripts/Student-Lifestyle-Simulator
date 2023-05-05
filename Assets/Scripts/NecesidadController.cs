@@ -10,48 +10,58 @@ public class NecesidadController : MonoBehaviour
     float multiplicadorSalud;
 
     [SerializeField]
+    Animator anim;
+
+    [SerializeField]
     Necesidades[] necesidades;
     [SerializeField]
-    Slider[] slidersNecesidadesVitales;
+    Slider sliderSalud;
     [SerializeField]
-    Slider[] slidersNecesidadesSecundarias;
+    Slider[] slidersNecesidades;
 
     // Update is called once per frame
     void Update()
     {
-        multiplicadorSalud = 0;
-        foreach(Necesidades n in necesidades)
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(n.necesidadVital)
+            anim.SetBool("abrirCerrar", !anim.GetBool("abrirCerrar"));
+        }
+
+        multiplicadorSalud = 0;
+        for(int i = 0; i < necesidades.Length; i++)
+        {
+            if(necesidades[i].necesidadVital)
             {
-                n.AddNecesidad(-Time.deltaTime / 3);
+                necesidades[i].AddNecesidad(-Time.deltaTime / 3);
                 
-                if(n.valor <= 0)
+                if(necesidades[i].valor <= 0)
                 {
                     multiplicadorSalud++;
                 }
 
+                slidersNecesidades[i].value = necesidades[i].valor / 100;
             }
             else
             {
-                n.AddNecesidad(Time.deltaTime / 3);
-                if(n.valor >= 100)
+                necesidades[i].AddNecesidad(Time.deltaTime / 3);
+                if(necesidades[i].valor >= 100)
                 {
-                    foreach(Necesidades i in necesidades)
+                    foreach(Necesidades n in necesidades)
                     {
-                        if(i.nombre == "Higiene")
+                        if(n.nombre == "Higiene")
                         {
-                            i.valor = i.valorMaximo;
+                            n.valor = n.valorMaximo;
                             break;
                         }
                     }
-                    n.valor = 0;
+                    necesidades[i].valor = 0;
                 }
-
+                slidersNecesidades[i].value = necesidades[i].valor / 100;
             }
-            
         }
+
         salud -= Time.deltaTime * multiplicadorSalud;
+        sliderSalud.value = salud / 100;
     }
 
     public void SetNecesidadPlayer(Necesidades necesidad){
