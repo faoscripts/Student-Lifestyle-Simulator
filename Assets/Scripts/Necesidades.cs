@@ -11,7 +11,7 @@ public class Necesidades
     public float multiplicadorVelocidad;
     public bool necesidadVital;
 
-    public void SetNecesidad(float val, float mult = 0)
+    public void SetNecesidad(float val, float mult)
     {
         valor += val;
         valor = Mathf.Clamp(valor, 0, valorMaximo);

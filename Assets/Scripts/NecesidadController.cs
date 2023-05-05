@@ -53,4 +53,12 @@ public class NecesidadController : MonoBehaviour
         }
         salud -= Time.deltaTime * multiplicadorSalud;
     }
+
+    public void SetNecesidadPlayer(Necesidades necesidad){
+        List<Necesidades> listNecesidades = new();
+        listNecesidades.AddRange(necesidades);
+
+        Necesidades nMatch = listNecesidades.Find(x => x.nombre == necesidad.nombre);
+        nMatch.SetNecesidad(necesidad.valor, necesidad.multiplicadorVelocidad);
+    }
 }
