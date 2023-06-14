@@ -25,3 +25,4 @@ MonoBehaviour:
   equipoPrefab: {fileID: 6507070001658953185, guid: 83cf8e83616000d4c8e50b0ac5f2b99f, type: 3}
   itemWeight: 0.3
   consumible: 1
+  soundName: Fumar

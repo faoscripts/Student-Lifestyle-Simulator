@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float throwStrength;
     public static bool swDrop = true;
     [SerializeField] GameObject defaultHand;
+    [SerializeField] AudioManager am;
 
     // Update is called once per frame
     void Update()
@@ -27,9 +28,11 @@ public class PlayerMovement : MonoBehaviour
     void Action(){
         if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null){
             GameObject item = itemSlot.transform.GetChild(0).gameObject;
-            if(item.GetComponent<AudioManager>() != null)
+            print("item.name = " + item.name);
+            if(am != null)
             {
-                item.GetComponent<AudioManager>().Play("Accion");
+                print("enter play accion");
+                am.Play(item.GetComponent<ItemController>().item.soundName);
             }
             
             Necesidades[] statsSuma = item.GetComponent<ItemController>().item.statsSuma;
@@ -45,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
             foreach(Necesidades n in statsResta)
             {
                 n.valor = -(n.valor);
-                print("-n.valor = " + -n.valor);
                 nc.SetNecesidadPlayer(n);
             }
 

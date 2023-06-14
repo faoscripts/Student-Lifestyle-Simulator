@@ -30,3 +30,4 @@ MonoBehaviour:
   equipoPrefab: {fileID: 9073490231643463803, guid: cbc4849ef3db8da4c9005c6b69a7ac23, type: 3}
   itemWeight: 1
   consumible: 1
+  soundName: Beber

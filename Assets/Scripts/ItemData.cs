@@ -18,6 +18,7 @@ public class ItemData : ScriptableObject
     public GameObject equipoPrefab;
     public float itemWeight;
     public bool consumible;
+    public string soundName;
 }
 
 public enum EquipType

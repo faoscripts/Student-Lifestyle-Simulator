@@ -15,4 +15,5 @@ public class Sound
     public bool autoPlay;
     [HideInInspector]
     public AudioSource source;
+    public GameObject sourceGO;
 }
