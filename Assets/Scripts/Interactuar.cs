@@ -14,11 +14,12 @@ public class Interactuar : MonoBehaviour
     [SerializeField]
     GameObject puntero;
     IInteractuable interactuableActual;
-
+    AudioManager am;
     // Start is called before the first frame update
     void Start()
     {
         puntero.GetComponent<RectTransform>().sizeDelta = new Vector2(3, 3);
+        am = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame

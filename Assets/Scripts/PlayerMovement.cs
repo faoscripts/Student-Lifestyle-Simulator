@@ -28,10 +28,8 @@ public class PlayerMovement : MonoBehaviour
     void Action(){
         if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null){
             GameObject item = itemSlot.transform.GetChild(0).gameObject;
-            print("item.name = " + item.name);
             if(am != null)
             {
-                print("enter play accion");
                 am.Play(item.GetComponent<ItemController>().item.soundName);
             }
             
@@ -63,8 +61,6 @@ public class PlayerMovement : MonoBehaviour
     void Drop(){
         if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
             if (swDrop) { swDrop = !swDrop; return; }
-            // itemSlot is Mano
-            // item is Porro
             GameObject item = itemSlot.transform.GetChild(0).gameObject;
             item.transform.parent = null;
             if(item.GetComponent<Rigidbody>()){

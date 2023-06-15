@@ -13,6 +13,10 @@ public class Sound
     public float pitch;
     public bool loop;
     public bool autoPlay;
+    [Header("3d options")]
+    public bool spatialBlend;
+    public float minDistance;
+    public float maxDistance;
     [HideInInspector]
     public AudioSource source;
     public GameObject sourceGO;

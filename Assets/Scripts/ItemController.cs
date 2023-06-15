@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class ItemController : MonoBehaviour, IInteractuable
 {
     public ItemData item;
+    AudioManager am;
+    bool status = false;
 
     void Start(){
+        am = FindObjectOfType<AudioManager>();
         if(gameObject.GetComponent<Rigidbody>() == null) gameObject.AddComponent<Rigidbody>();
         GetComponent<Rigidbody>().mass = item.itemWeight;
     }
@@ -29,6 +32,18 @@ public class ItemController : MonoBehaviour, IInteractuable
             PlayerMovement.itemSlot = itemInstance;
             Destroy(gameObject);
             PlayerMovement.swDrop = true;
+        }else if(!item.grab){
+            if(am != null)
+            {
+                if (status == false)
+                {
+                    am.Play(item.soundName);
+                    status = true;
+                }else{
+                    am.Pause(item.soundName);
+                    status = false;
+                }
+            }
         }
         //if (InventoryController.instance.imageSlot[i].GetComponent<Image>().sprite == null)
         //{
