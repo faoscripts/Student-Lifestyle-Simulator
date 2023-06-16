@@ -10,29 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea54fe567c2b4b4598992fb41824cef, type: 3}
-  m_Name: Canuto
+  m_Name: Cama
   m_EditorClassIdentifier: 
-  nombre: Canuto
-  equipable: 0
-  grab: 1
+  nombre: Cama
+  equipable: 1
+  grab: 0
   statsSuma:
-  - nombre: Salud Mental
-    valor: 30
-    valorMaximo: 0
-    multiplicadorVelocidad: 0
-    necesidadVital: 0
-  statsRestar:
   - nombre: "Energ\xEDa"
-    valor: 40
+    valor: 50
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
-  - nombre: Saciedad
+  - nombre: Salud Mental
     valor: 20
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
-  soundName: Fumar
-  equipoPrefab: {fileID: 4347642715316700435, guid: e32268779f99dda4a8259505a077100f, type: 3}
-  itemWeight: 0.5
-  consumible: 1
+  statsRestar:
+  - nombre: Higiene
+    valor: 20
+    valorMaximo: 0
+    multiplicadorVelocidad: 0
+    necesidadVital: 0
+  - nombre: Saciedad
+    valor: 10
+    valorMaximo: 0
+    multiplicadorVelocidad: 0
+    necesidadVital: 0
+  - nombre: "Hidrataci\xF3n"
+    valor: 10
+    valorMaximo: 0
+    multiplicadorVelocidad: 0
+    necesidadVital: 0
+  soundName: Dormir
+  equipoPrefab: {fileID: 0}
+  itemWeight: 0
+  consumible: 0

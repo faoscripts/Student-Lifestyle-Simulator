@@ -21,8 +21,13 @@ MonoBehaviour:
     valorMaximo: 0
     multiplicadorVelocidad: 0.1
     necesidadVital: 0
+  - nombre: Caca
+    valor: 10
+    valorMaximo: 0
+    multiplicadorVelocidad: 0.1
+    necesidadVital: 0
   statsRestar: []
+  soundName: ComerPapas
   equipoPrefab: {fileID: 7448156618794012502, guid: 0a6d9901ffd5bfa44ac114fd3c986209, type: 3}
   itemWeight: 0.4
   consumible: 1
-  soundName: ComerPapas

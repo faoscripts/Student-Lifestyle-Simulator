@@ -5,12 +5,13 @@ using UnityEngine;
 public class CamaController : MonoBehaviour, IInteractuable
 {
     CicloDiaYNoche ciclo;
-    ItemData item;
+    [SerializeField] ItemData item;
 
     public void Interactuar()
     {
-        ciclo.FundidoANegro();
-        NecesidadController nc = GetComponent<NecesidadController>();
+        ciclo = GameObject.FindObjectOfType<CicloDiaYNoche>();
+        ciclo.Sleep();
+        NecesidadController nc = FindObjectOfType<NecesidadController>();
 
         foreach (Necesidades n in item.statsSuma)
         {

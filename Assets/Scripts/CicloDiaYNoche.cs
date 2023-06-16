@@ -29,7 +29,7 @@ public class CicloDiaYNoche : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI txtReloj;
     bool relojActivo;
-    int horas;
+    float horas;
     int minutos;
 
     [Header("-----Nuevo Dia-----")]
@@ -42,6 +42,7 @@ public class CicloDiaYNoche : MonoBehaviour
     void Start()
     {
         contadorDias = 1;
+        horas = 8;
         relojActivo = true;
         StartCoroutine("RelojContador");
         txtDia.gameObject.SetActive(false);
@@ -64,7 +65,7 @@ public class CicloDiaYNoche : MonoBehaviour
                 StartCoroutine("NuevoDia");
             }
 
-            txtReloj.text = (horas.ToString("D2")) + " : " + (minutos.ToString("D2"));
+            txtReloj.text = (Mathf.FloorToInt(horas).ToString("D2")) + " : " + (minutos.ToString("D2"));
             
             //SKYBOX EXPOSURE
             if(horas < 12)
@@ -80,32 +81,38 @@ public class CicloDiaYNoche : MonoBehaviour
             //SLIDER
             if (sliderSolLuna.value < 1)
             {
-                sliderSolLuna.value += 1f / 1440;
+                print("sliderSolLuna value = " +  horas * 1 / 24);
+                // sliderSolLuna.value += 1f / 1440;
+                sliderSolLuna.value = horas * 1 / 24;
             }
             else{
                 sliderSolLuna.value = 0;
             }
             
-            if(horas == 6)
+            if(horas >= 6 && horas <= 20)
             {
                 sliderHandle.sprite = solSprite;
                 dia = true;
             }
-            if(horas == 20)
+            if(horas >= 20 || horas >= 0 && horas <= 6 )
             {
                 sliderHandle.sprite = lunaSprite;
                 dia = false;
             }
 
-            sol.transform.Rotate(Vector3.right * 0.25f);
+            const float adjustSyncSunHours = -90;
+
+            float sunPosition = horas * 360 / 24;
+            print("sunPosition = " + sunPosition);
+            sol.transform.rotation = Quaternion.Euler(sunPosition + adjustSyncSunHours, 0, 0);
         }   
     }
 
-    IEnumerator NuevoDia()
+    IEnumerator NuevoDiaCoroutine()
     {
         horas = 0;
         contadorDias++;
-        txtDia.text = "Día " + contadorDias;
+        txtDia.text = "Dia " + contadorDias;
         while (nuevoDia.color.a < 1)
         {
             nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a + 0.1f);
@@ -123,8 +130,35 @@ public class CicloDiaYNoche : MonoBehaviour
         }
     }
 
-    public void FundidoANegro()
+    IEnumerator SleepCoroutine()
     {
-        StartCoroutine("NuevoDia");
+        horas += 8;
+        // contadorDias++;
+        // txtDia.text = "Dï¿½a " + contadorDias;
+        while (nuevoDia.color.a < 1)
+        {
+            nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a + 0.1f);
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        txtDia.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        txtDia.gameObject.SetActive(false);
+
+        while (nuevoDia.color.a > 0)
+        {
+            nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a - 0.1f);
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+
+    public void NuevoDia()
+    {
+        StartCoroutine("NuevoDiaCoroutine");
+    }
+
+    public void Sleep()
+    {
+        StartCoroutine("SleepCoroutine");
     }
 }
