@@ -21,7 +21,6 @@ public class CamaController : MonoBehaviour, IInteractuable
         foreach (Necesidades n in item.statsRestar)
         {
             n.valor = -(n.valor);
-            print("-n.valor = " + -n.valor);
             nc.SetNecesidadPlayer(n);
         }
     }

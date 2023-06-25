@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Radio
   m_EditorClassIdentifier: 
   nombre: Radio
-  equipable: 1
-  grab: 0
+  grab: 1
   statsSuma: []
   statsRestar: []
-  soundName: Estopa
+  soundName: 
   equipoPrefab: {fileID: 97781392511173035, guid: 436bf5d6169c5ce4bb835faf1674380e, type: 3}
-  itemWeight: 0
+  itemWeight: 4
   consumible: 0
+  rb: 1

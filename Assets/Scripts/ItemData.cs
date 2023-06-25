@@ -8,7 +8,7 @@ public class ItemData : ScriptableObject
 {
     [Header("info")]
     public string nombre;
-    public EquipType equipable;
+    // public EquipType equipable;
     public bool grab;
     public Necesidades[] statsSuma;
     public Necesidades[] statsRestar;
@@ -18,6 +18,8 @@ public class ItemData : ScriptableObject
     public GameObject equipoPrefab;
     public float itemWeight;
     public bool consumible;
+    public bool rb;
+    public bool spatialSound;
 }
 
 public enum EquipType

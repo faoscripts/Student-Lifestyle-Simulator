@@ -17,6 +17,15 @@ public class AudioManager : MonoBehaviour
             }else{
                 s.source = gameObject.AddComponent<AudioSource>();
             }
+            // else{
+            //     if (s.spatialBlend == true && s.tagObject != null)
+            //     {
+            //         GameObject sourceGO = GameObject.FindGameObjectWithTag(s.tagObject);
+            //         s.source = sourceGO.AddComponent<AudioSource>();
+            //     }else{
+            //         s.source = gameObject.AddComponent<AudioSource>();
+            //     }
+            // }
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
@@ -44,6 +53,20 @@ public class AudioManager : MonoBehaviour
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
+        
+        // if (s.sourceGO != null)
+        // {
+        //     s.source = s.sourceGO.AddComponent<AudioSource>();
+        // }else{
+        //     if (s.spatialBlend == true && s.tagObject != "")
+        //     {
+        //         GameObject sourceGO = GameObject.FindGameObjectWithTag(s.tagObject);
+        //         s.source = sourceGO.AddComponent<AudioSource>();
+        //     }else{
+        //         s.source = gameObject.AddComponent<AudioSource>();
+        //     }
+        // }
+
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
@@ -61,5 +84,34 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Stop();
+    }
+
+    // private void Update(){
+    //     if (s.spatialBlend == true && s.tagObject != null)
+    //     {
+    //         GameObject sourceGO = GameObject.FindGameObjectWithTag(s.tagObject);
+    //         s.source = sourceGO.AddComponent<AudioSource>();
+    //     }else{
+    //         s.source = gameObject.AddComponent<AudioSource>();
+    //     }
+    // }
+
+    public void setAudioSource(string name, GameObject go){
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source = go.AddComponent<AudioSource>();
+        s.source.clip = s.clip;
+        s.source.volume = s.volume;
+        s.source.pitch = s.pitch;
+        s.source.loop = s.loop;
+        s.source.playOnAwake = s.autoPlay;
+        s.source.spatialBlend = s.spatialBlend ? 1 : 0;
+        s.source.rolloffMode = AudioRolloffMode.Linear;
+        s.source.minDistance = s.minDistance;
+        s.source.maxDistance = s.maxDistance;
     }
 }

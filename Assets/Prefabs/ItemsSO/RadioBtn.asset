@@ -10,19 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea54fe567c2b4b4598992fb41824cef, type: 3}
-  m_Name: Cigarro
+  m_Name: RadioBtn
   m_EditorClassIdentifier: 
-  nombre: Cigarro
-  grab: 1
-  statsSuma:
-  - nombre: Salud Mental
-    valor: 10
-    valorMaximo: 0
-    multiplicadorVelocidad: 0.2
-    necesidadVital: 0
+  nombre: RadioBtn
+  grab: 0
+  statsSuma: []
   statsRestar: []
-  soundName: Fumar
-  equipoPrefab: {fileID: 6507070001658953185, guid: 83cf8e83616000d4c8e50b0ac5f2b99f, type: 3}
-  itemWeight: 0.3
-  consumible: 1
-  rb: 1
+  soundName: Estopa
+  equipoPrefab: {fileID: 97781392511173035, guid: 436bf5d6169c5ce4bb835faf1674380e, type: 3}
+  itemWeight: 4
+  consumible: 0
+  rb: 0
+  spatialSound: 1

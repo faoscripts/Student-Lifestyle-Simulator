@@ -81,7 +81,6 @@ public class CicloDiaYNoche : MonoBehaviour
             //SLIDER
             if (sliderSolLuna.value < 1)
             {
-                print("sliderSolLuna value = " +  horas * 1 / 24);
                 // sliderSolLuna.value += 1f / 1440;
                 sliderSolLuna.value = horas * 1 / 24;
             }
@@ -103,7 +102,6 @@ public class CicloDiaYNoche : MonoBehaviour
             const float adjustSyncSunHours = -90;
 
             float sunPosition = horas * 360 / 24;
-            print("sunPosition = " + sunPosition);
             sol.transform.rotation = Quaternion.Euler(sunPosition + adjustSyncSunHours, 0, 0);
         }   
     }

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Canuto
   m_EditorClassIdentifier: 
   nombre: Canuto
-  equipable: 0
   grab: 1
   statsSuma:
   - nombre: Salud Mental
@@ -36,3 +35,4 @@ MonoBehaviour:
   equipoPrefab: {fileID: 4347642715316700435, guid: e32268779f99dda4a8259505a077100f, type: 3}
   itemWeight: 0.5
   consumible: 1
+  rb: 1

@@ -11,8 +11,13 @@ public class ItemController : MonoBehaviour, IInteractuable
 
     void Start(){
         am = FindObjectOfType<AudioManager>();
-        if(gameObject.GetComponent<Rigidbody>() == null) gameObject.AddComponent<Rigidbody>();
-        GetComponent<Rigidbody>().mass = item.itemWeight;
+        if(gameObject.GetComponent<Rigidbody>() == null && item.rb == true){
+            gameObject.AddComponent<Rigidbody>();
+            GetComponent<Rigidbody>().mass = item.itemWeight;
+        }
+        print("enter start itemController " + item.name);
+        print(gameObject.GetComponent<AudioSource>());
+        if (item.spatialSound && !gameObject.GetComponent<AudioSource>()) am.setAudioSource(item.soundName,gameObject);
     }
 
     public void Interactuar()
@@ -26,7 +31,6 @@ public class ItemController : MonoBehaviour, IInteractuable
             itemInstance.transform.GetChild(0).gameObject.AddComponent<Rigidbody>().isKinematic = true;
             itemInstance.transform.localPosition = item.equipoPrefab.transform.position;
             itemInstance.transform.localRotation = item.equipoPrefab.transform.rotation;
-            print("layer item name = " + itemInstance.name);
             int LayerHand = LayerMask.NameToLayer("Hand");
             itemInstance.transform.GetChild(0).gameObject.layer = LayerHand;
             PlayerMovement.itemSlot = itemInstance;

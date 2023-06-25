@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Cama
   m_EditorClassIdentifier: 
   nombre: Cama
-  equipable: 1
   grab: 0
   statsSuma:
   - nombre: "Energ\xEDa"
@@ -46,3 +45,4 @@ MonoBehaviour:
   equipoPrefab: {fileID: 0}
   itemWeight: 0
   consumible: 0
+  rb: 1

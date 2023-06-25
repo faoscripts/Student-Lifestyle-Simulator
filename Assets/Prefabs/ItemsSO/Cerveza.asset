@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Cerveza
   m_EditorClassIdentifier: 
   nombre: Cerveza
-  equipable: 0
   grab: 1
   statsSuma:
   - nombre: "Diversi\xF3n"
@@ -27,7 +26,8 @@ MonoBehaviour:
     multiplicadorVelocidad: 0.1
     necesidadVital: 0
   statsRestar: []
+  soundName: Beber
   equipoPrefab: {fileID: 9073490231643463803, guid: cbc4849ef3db8da4c9005c6b69a7ac23, type: 3}
   itemWeight: 1
   consumible: 1
-  soundName: Beber
+  rb: 1
