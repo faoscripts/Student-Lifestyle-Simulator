@@ -13,7 +13,11 @@ public class CicloDiaYNoche : MonoBehaviour
     float velocidad;
     [SerializeField]
     GameObject sol;
-    float exposure;    
+    float exposure;
+    [SerializeField] int hourStartSun = 8;
+    [SerializeField] int hoursDurationSun = 12;
+    int sunHours = 0;
+    bool boolSun = false;
 
     [Header("-----Slider-----")]
     [SerializeField]
@@ -46,19 +50,21 @@ public class CicloDiaYNoche : MonoBehaviour
         relojActivo = true;
         StartCoroutine("RelojContador");
         txtDia.gameObject.SetActive(false);
+        exposure = 0;
     }
 
     IEnumerator RelojContador()
     {
         while (relojActivo)
         {
-            RenderSettings.skybox.SetFloat("_Exposure", exposure);
+            // RenderSettings.skybox.SetFloat("_Exposure", exposure);
             yield return new WaitForSeconds(velocidad);
             minutos++;
             if (minutos >= 60)
             {
                 minutos = 0;
                 horas++;
+                if (boolSun) sunHours++;
             }
             if (horas >= 24)
             {
@@ -68,17 +74,48 @@ public class CicloDiaYNoche : MonoBehaviour
             txtReloj.text = (Mathf.FloorToInt(horas).ToString("D2")) + " : " + (minutos.ToString("D2"));
             
             //SKYBOX EXPOSURE
-            if(horas < 12)
-            {
-                exposure += 1f / 720f;
-            }
-            else
-            {
-                exposure -= 1f / 720f;
-            }
-            RenderSettings.skybox.SetFloat("_Exposure", exposure);
 
-            //SLIDER
+            if (horas >= hourStartSun && horas <= hourStartSun+hoursDurationSun)
+            {
+                boolSun = true;
+                int halfDay = hoursDurationSun/2;
+                if (sunHours <= halfDay) // morning
+                {
+                    // exposure = 1f / (4-4);
+                }else{ // afternoon
+                    exposure -= 1f / (hoursDurationSun*60/2);
+                }
+            }else{
+                boolSun = false;
+                sunHours = 0;
+                exposure = 0;
+            }
+            // if(horas < 12)
+            // {
+            //     exposure += 1f / 720f;
+            // }
+            // else
+            // {
+            //     exposure -= 1f / 720f;
+            // }
+            // if (horas<8 || horas>20)
+            // {
+            //     exposure = 0;
+            // }else{
+            //     if (horas < 14)
+            //     {
+            //         exposure = (horas - 8) * 1 / 6;
+            //     }else{
+            //         exposure = 2-((horas - 8) * 1 / 6);
+            //     }
+            // }
+            print("exposure = " + exposure);
+            const float defaultBright = 0.1f;
+            RenderSettings.skybox.SetFloat("_Exposure", exposure+defaultBright);
+            DynamicGI.UpdateEnvironment();
+
+            // SLIDER SUN AND MOON
+
             if (sliderSolLuna.value < 1)
             {
                 // sliderSolLuna.value += 1f / 1440;
@@ -99,10 +136,12 @@ public class CicloDiaYNoche : MonoBehaviour
                 dia = false;
             }
 
-            const float adjustSyncSunHours = -90;
+            // const float adjustSyncSunHours = -90;
 
-            float sunPosition = horas * 360 / 24;
-            sol.transform.rotation = Quaternion.Euler(sunPosition + adjustSyncSunHours, 0, 0);
+            // SUN ROTATION
+
+            // float sunPosition = horas * 360 / 24;
+            // sol.transform.rotation = Quaternion.Euler(sunPosition + adjustSyncSunHours, 0, 0);
         }   
     }
 
