@@ -15,8 +15,8 @@ public class ItemController : MonoBehaviour, IInteractuable
             gameObject.AddComponent<Rigidbody>();
             GetComponent<Rigidbody>().mass = item.itemWeight;
         }
-        print("enter start itemController " + item.name);
-        print(gameObject.GetComponent<AudioSource>());
+        // print("enter start itemController " + item.name);
+        // print(gameObject.GetComponent<AudioSource>());
         if (item.spatialSound && !gameObject.GetComponent<AudioSource>()) am.setAudioSource(item.soundName,gameObject);
     }
 
