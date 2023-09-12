@@ -169,8 +169,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -412,10 +412,10 @@ RectTransform:
   m_Father: {fileID: 1426286748469621113}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 182}
-  m_SizeDelta: {x: 200, y: 64.29}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -32.145004}
+  m_SizeDelta: {x: 200, y: 64.29001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &792928285
 MonoBehaviour:
@@ -429,8 +429,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01b364fd150812468780f65387a85f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.3
-  sol: {fileID: 0}
+  DirectionalLight: {fileID: 0}
+  TimeOfDay: 8
+  speed: 0.1
+  hourStartSun: 8
+  hoursDurationSun: 12
   sliderSolLuna: {fileID: 484410050}
   sliderHandle: {fileID: 868049127}
   solSprite: {fileID: 21300000, guid: abbdb2657fccab64d9d3eec8522d6348, type: 3}
@@ -1670,6 +1673,7 @@ GameObject:
   - component: {fileID: 7791373898020851278}
   - component: {fileID: 6181207335517210539}
   - component: {fileID: 1506594541447756269}
+  - component: {fileID: 1686375151}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1762,6 +1766,91 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1686375151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286458365667941776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c677e3dcfa73347834303f5d889450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SonidoCiudad
+    clip: {fileID: 8300000, guid: 588ee74cb11fb5348bbccb0b528ed34c, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+    autoPlay: 1
+    spatialBlend: 1
+    minDistance: 0
+    maxDistance: 25
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: Radio
+  - name: Estopa
+    clip: {fileID: 8300000, guid: b64ccfaa6c32d6a469f84fd16cff61aa, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    autoPlay: 0
+    spatialBlend: 1
+    minDistance: 0
+    maxDistance: 15
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: Radio
+  - name: Cepillarse
+    clip: {fileID: 8300000, guid: c7671b8411b7d7540b6b4a31c5afd4be, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
+  - name: Fumar
+    clip: {fileID: 8300000, guid: f843339e0b9e2244181b18f3052f325b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
+  - name: ComerPapas
+    clip: {fileID: 8300000, guid: e831d1b71afd13043ac7d6e5aaafd200, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
+  - name: Beber
+    clip: {fileID: 8300000, guid: 5283b45c685cb3b4fb38c655b7c19e8a, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
 --- !u!1 &1313148938026096283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2525,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7176567601448343863}
-  - component: {fileID: 2107832404591973589}
   - component: {fileID: 9030459912508939901}
   - component: {fileID: 8280658277284317664}
   - component: {fileID: 8921483282723889973}
@@ -2456,7 +2544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3414259940072161633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.64, y: -1.17, z: -0.259}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2464,19 +2552,6 @@ Transform:
   m_Father: {fileID: 9188606129632548328}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2107832404591973589
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3414259940072161633}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &9030459912508939901
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2488,7 +2563,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -2511,6 +2586,7 @@ MonoBehaviour:
   speed: 6
   throwStrength: 100
   defaultHand: {fileID: 5436284853786302169}
+  am: {fileID: 1686375151}
 --- !u!114 &8921483282723889973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2604,7 +2680,7 @@ GameObject:
   - component: {fileID: 9188606129632548328}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2619,7 +2695,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.506, y: 1.56, z: 0.259}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1426286748469621113}
   - {fileID: 7176567601448343863}
@@ -3761,7 +3837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6317678924844103689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.43, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5807,8 +5883,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -547, y: -95.999985}
-  m_SizeDelta: {x: 275.35648, y: 256.9}
+  m_AnchoredPosition: {x: -547, y: -85.999985}
+  m_SizeDelta: {x: 275.35645, y: 256.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2406818948554100984
 Animator:
