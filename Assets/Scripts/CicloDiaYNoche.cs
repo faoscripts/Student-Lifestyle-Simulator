@@ -67,8 +67,7 @@ public class CicloDiaYNoche : MonoBehaviour
         // NEXT DAY
         if (Mathf.FloorToInt(TimeOfDay) == dayHours)
         {
-            StartCoroutine(nameof(NuevoDiaCoroutine));
-            TimeOfDay = 0;
+            NuevoDia();
         }
 
         // SUN ROTATION
@@ -112,40 +111,25 @@ public class CicloDiaYNoche : MonoBehaviour
         DynamicGI.UpdateEnvironment();
     }
 
-    IEnumerator NuevoDiaCoroutine()
+    IEnumerator BlackSceenFade(bool sleep = false)
     {
-        // horas = 0;
-        contadorDias++;
-        txtDia.text = "Dia " + contadorDias;
+        const int SleepTime = 8;
         while (nuevoDia.color.a < 1)
         {
             nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a + 0.1f);
             yield return new WaitForSeconds(0.02f);
         }
 
-        txtDia.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1);
-        txtDia.gameObject.SetActive(false);
+        if (sleep==true) TimeOfDay += SleepTime; // if sleep add sleep hours
 
-        while (nuevoDia.color.a > 0)
+        if (TimeOfDay > dayHours) // check if day change
         {
-            nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a - 0.1f);
-            yield return new WaitForSeconds(0.02f);
-        }
-    }
-
-    IEnumerator SleepCoroutine()
-    {
-        horas += 8;
-        // contadorDias++;
-        // txtDia.text = "D�a " + contadorDias;
-        while (nuevoDia.color.a < 1)
-        {
-            nuevoDia.color = new Color(nuevoDia.color.r, nuevoDia.color.g, nuevoDia.color.b, nuevoDia.color.a + 0.1f);
-            yield return new WaitForSeconds(0.02f);
+            contadorDias++; // update day counter
+            txtDia.text = "Dia " + contadorDias; // update day text
+            txtDia.gameObject.SetActive(true); // show day text
+            TimeOfDay -= dayHours; // reset day hours
         }
 
-        txtDia.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
         txtDia.gameObject.SetActive(false);
 
@@ -158,11 +142,11 @@ public class CicloDiaYNoche : MonoBehaviour
 
     public void NuevoDia()
     {
-        StartCoroutine("NuevoDiaCoroutine");
+        StartCoroutine(nameof(BlackSceenFade),false);
     }
 
     public void Sleep()
     {
-        StartCoroutine("SleepCoroutine");
+        StartCoroutine(nameof(BlackSceenFade),true);
     }
 }
