@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class CicloDiaYNoche : MonoBehaviour
 {
-    int contadorDias;
+    public static int contadorDias;
+    public static int daysTutorial = 1;
     // [SerializeField]
     // float velocidad;
     // [SerializeField]

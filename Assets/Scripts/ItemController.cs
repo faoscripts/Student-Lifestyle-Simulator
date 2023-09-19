@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class ItemController : MonoBehaviour, IInteractuable
     public ItemData item;
     AudioManager am;
     bool status = false;
+    // GameObject PlayerMovement.TxtI;
 
     void Start(){
         am = FindObjectOfType<AudioManager>();
@@ -15,8 +17,7 @@ public class ItemController : MonoBehaviour, IInteractuable
             gameObject.AddComponent<Rigidbody>();
             GetComponent<Rigidbody>().mass = item.itemWeight;
         }
-        // print("enter start itemController " + item.name);
-        // print(gameObject.GetComponent<AudioSource>());
+        // PlayerMovement.TxtI = GameObject.FindWithTag(Tags.COMMANDS);
         if (item.spatialSound && !gameObject.GetComponent<AudioSource>()) am.setAudioSource(item.soundName,gameObject);
     }
 
@@ -36,6 +37,11 @@ public class ItemController : MonoBehaviour, IInteractuable
             PlayerMovement.itemSlot = itemInstance;
             Destroy(gameObject);
             PlayerMovement.swDrop = true;
+
+            PlayerMovement.TxtI.GetComponent<TMP_Text>().text = "Pulsa LMB para interactuar con el objeto equipado \n Pulsa RMB para soltar";
+            if (!PlayerMovement.TxtI.activeInHierarchy && CicloDiaYNoche.contadorDias <= CicloDiaYNoche.daysTutorial) {
+                PlayerMovement.TxtI.SetActive(true);
+            }
         }else if(!item.grab){
             if(am != null)
             {

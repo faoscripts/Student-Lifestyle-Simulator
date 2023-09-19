@@ -7,10 +7,17 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public float speed;
     public static GameObject itemSlot;
+    public static GameObject TxtI;
     [SerializeField] float throwStrength;
     public static bool swDrop = true;
     [SerializeField] GameObject defaultHand;
     [SerializeField] AudioManager am;
+    // GameObject PlayerMovement;
+
+    void Start(){
+        TxtI = GameObject.FindWithTag(Tags.COMMANDS);
+        PlayerMovement.TxtI.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -52,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
             if (item.GetComponent<ItemController>().item.consumible) {
                 Destroy(itemSlot);
                 defaultHand.SetActive(true);
+                if (TxtI.activeInHierarchy) TxtI.SetActive(false);
             }
 
 
@@ -73,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
             // Destroy(itemSlot.transform.GetChild(1).gameObject);
             Destroy(itemSlot.gameObject);
             defaultHand.SetActive(true);
+            if (TxtI.activeInHierarchy) TxtI.SetActive(false);
             // itemSlot = null;
         }
     }
