@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4144423101652784982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4419428502666279311}
+  - component: {fileID: 681507878818878700}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4419428502666279311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144423101652784982}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.135771, y: -1.4252048, z: 9.170301}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &681507878818878700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144423101652784982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c677e3dcfa73347834303f5d889450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SonidoCiudad
+    clip: {fileID: 8300000, guid: 588ee74cb11fb5348bbccb0b528ed34c, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+    autoPlay: 1
+    spatialBlend: 1
+    minDistance: 0
+    maxDistance: 25
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: Radio
+  - name: Estopa
+    clip: {fileID: 8300000, guid: b64ccfaa6c32d6a469f84fd16cff61aa, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    autoPlay: 0
+    spatialBlend: 1
+    minDistance: 0
+    maxDistance: 15
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: Radio
+  - name: Cepillarse
+    clip: {fileID: 8300000, guid: c7671b8411b7d7540b6b4a31c5afd4be, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
+  - name: Fumar
+    clip: {fileID: 8300000, guid: f843339e0b9e2244181b18f3052f325b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
+  - name: ComerPapas
+    clip: {fileID: 8300000, guid: e831d1b71afd13043ac7d6e5aaafd200, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
+  - name: Beber
+    clip: {fileID: 8300000, guid: 5283b45c685cb3b4fb38c655b7c19e8a, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
