@@ -10,30 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea54fe567c2b4b4598992fb41824cef, type: 3}
-  m_Name: Cerveza
+  m_Name: Vaso
   m_EditorClassIdentifier: 
-  nombre: Cerveza
-  grab: 1
+  nombre: VasoAgua
   statsSuma:
-  - nombre: "Diversi\xF3n"
-    valor: 15
+  - nombre: "Hidrataci\xF3n"
+    valor: 20
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
   - nombre: Salud Mental
-    valor: 10
-    valorMaximo: 0
-    multiplicadorVelocidad: 0
-    necesidadVital: 0
-  - nombre: "Hidrataci\xF3n"
-    valor: 10
+    valor: 2
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
   statsRestar: []
-  soundName: Beber
-  equipoPrefab: {fileID: 9073490231643463803, guid: cbc4849ef3db8da4c9005c6b69a7ac23, type: 3}
-  itemWeight: 1
-  consumible: 1
-  rb: 1
+  soundName: 
+  grab: 1
+  equipoPrefab: {fileID: 9073490231643463803, guid: 016c1fb099e15554290a9571ae6638f1, type: 3}
+  complex: 1
+  relatedGO: {fileID: 5834114689508729851, guid: 30b2f5c2bd67d464f8a899149cb86a36, type: 3}
+  resultGO: {fileID: 7682333313484251750, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
+  consumible: 0
+  rb: 0
+  itemWeight: 0
   spatialSound: 0

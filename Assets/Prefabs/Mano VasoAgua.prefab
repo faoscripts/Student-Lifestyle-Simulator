@@ -1012,7 +1012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8547924341275605697}
   m_Layer: 6
-  m_Name: Mano Vaso
+  m_Name: Mano VasoAgua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,71 +1030,71 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4389336535347022480}
+  - {fileID: 6670452263932115475}
   - {fileID: 725227650847500895}
   - {fileID: 5260148680304318224}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -65.987, y: -163.231, z: 67.613}
---- !u!1001 &2818318028703505487
+--- !u!1001 &8361199142058436951
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8547924341275605697}
     m_Modifications:
-    - target: {fileID: 904417408818545601, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
-      propertyPath: m_Name
-      value: vaso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.031
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.088
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.04
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.6888271
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.68882704
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.15974137
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.15974134
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 63.887
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
+    - target: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 7682333313484251750, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
+      propertyPath: m_Name
+      value: vasoAgua
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
---- !u!4 &4389336535347022480 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
+--- !u!4 &6670452263932115475 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2014977112715515615, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
-  m_PrefabInstance: {fileID: 2818318028703505487}
+  m_CorrespondingSourceObject: {fileID: 2925869366684554052, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
+  m_PrefabInstance: {fileID: 8361199142058436951}
   m_PrefabAsset: {fileID: 0}

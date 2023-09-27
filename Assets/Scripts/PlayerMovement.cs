@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start(){
         TxtI = GameObject.FindWithTag(Tags.COMMANDS);
-        PlayerMovement.TxtI.SetActive(false);
+        TxtI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +29,13 @@ public class PlayerMovement : MonoBehaviour
         controller.SimpleMove(move * speed);
         
         Action();
-        Drop();
+        if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
+            IInteractuable interactuable = FindObjectOfType<Interactuar>().interactuableActual;
+            if (interactuable == null)
+            {
+                Drop();
+            }
+        }
     }
 
     void Action(){
@@ -52,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             
             foreach(Necesidades n in statsResta)
             {
-                n.valor = -(n.valor);
+                n.valor = n.valor < 0 ? n.valor : -n.valor;
                 nc.SetNecesidadPlayer(n);
             }
 
@@ -62,13 +68,20 @@ public class PlayerMovement : MonoBehaviour
                 if (TxtI.activeInHierarchy) TxtI.SetActive(false);
             }
 
+            ItemData itemData = item.GetComponent<ItemController>().item;
+
+            if (itemData.complex && itemData.relatedGO == null && itemData.resultGO) {
+                Destroy(itemSlot);
+                EquipItem(itemData.resultGO.GetComponent<ItemController>());
+            }
+
 
         }
     }
 
     void Drop(){
         if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
-            if (swDrop) { swDrop = !swDrop; return; }
+            // if (swDrop) { swDrop = !swDrop; return; }
             GameObject item = itemSlot.transform.GetChild(0).gameObject;
             item.transform.parent = null;
             if(item.GetComponent<Rigidbody>()){
@@ -77,6 +90,10 @@ public class PlayerMovement : MonoBehaviour
                 item.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
                 int LayerDefault = LayerMask.NameToLayer("Default");
                 item.layer = LayerDefault;
+                foreach (Transform child in item.transform)
+                {
+                    child.gameObject.layer = LayerDefault;
+                }
             }
             // Destroy(itemSlot.transform.GetChild(1).gameObject);
             Destroy(itemSlot.gameObject);
@@ -86,5 +103,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void DestroyEquipedItem(){
+        Destroy(itemSlot);
+        defaultHand.SetActive(true);
+    }
+
+    public void EquipItem(ItemController itemC){
+        defaultHand.SetActive(false);
+        GameObject handCamera = GameObject.Find("HandCamera");
+        GameObject itemInstance = Instantiate(itemC.item.equipoPrefab, handCamera.transform.position, Quaternion.identity, handCamera.transform);
+        // itemInstance.transform.parent = handCamera.transform;
+        itemInstance.transform.GetChild(0).gameObject.AddComponent<Rigidbody>().isKinematic = true;
+        itemInstance.transform.localPosition = itemC.item.equipoPrefab.transform.position;
+        itemInstance.transform.localRotation = itemC.item.equipoPrefab.transform.rotation;
+        int LayerHand = LayerMask.NameToLayer("Hand");
+        itemInstance.transform.GetChild(0).gameObject.layer = LayerHand;
+        foreach (Transform child in itemInstance.transform.GetChild(0).gameObject.transform)
+        {
+            child.gameObject.layer = LayerHand;
+        }
+        itemSlot = itemInstance;
+    }
     
 }

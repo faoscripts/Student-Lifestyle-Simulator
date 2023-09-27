@@ -14,7 +14,7 @@ public class Interactuar : MonoBehaviour
     LayerMask layerRaycast;
     [SerializeField]
     GameObject puntero;
-    IInteractuable interactuableActual;
+    public IInteractuable interactuableActual;
     AudioManager am;
     // GameObject PlayerMovement.TxtI;
     string bkGO;
@@ -39,31 +39,30 @@ public class Interactuar : MonoBehaviour
             }
         }
 
+        // if (PlayerMovement.itemSlot)
+        // {
+        //     GameObject item = PlayerMovement.itemSlot.transform.GetChild(0).gameObject;
+        //     ItemData itemData = item.GetComponent<ItemController>().item;
+        //     if (!itemData.complex) return;
+        // }
+        
         RaycastHit hit;
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, distanciaInteraccion, layerRaycast)
-            && !PlayerMovement.itemSlot)
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, distanciaInteraccion, layerRaycast))
         {
             if (hit.collider.gameObject.name == bkGO || hit.collider.gameObject == null) return;
-            // print("hit.collider.gameObject = " + hit.collider.gameObject);
-            // print("bkGO1 = " + bkGO);
-            // print("bkGO2 = " + bkGO);
             if (hit.collider.TryGetComponent<IInteractuable>(out IInteractuable iinteractuableRetraido))
             {
+                if (PlayerMovement.itemSlot && hit.collider.gameObject.GetComponent<ItemController>()){
+                    ItemData itemData = hit.collider.gameObject.GetComponent<ItemController>().item;
+                    if (itemData.grab) return;
+                }
                 bkGO = hit.collider.gameObject.name;
-                // print("hit.collider.iinteractuableRetraido = " + iinteractuableRetraido);
                 interactuableActual = iinteractuableRetraido;
                 puntero.GetComponent<RectTransform>().sizeDelta = new Vector2(6, 6);
                 PlayerMovement.TxtI.GetComponent<TMP_Text>().text = "Pulsa RMB para interactuar";
                 if (!PlayerMovement.TxtI.activeInHierarchy && CicloDiaYNoche.contadorDias <= CicloDiaYNoche.daysTutorial) PlayerMovement.TxtI.SetActive(true);
                 validation = true;
             }
-            // else
-            // {
-            //     print("exit");
-            //     interactuableActual = null;
-            //     puntero.GetComponent<RectTransform>().sizeDelta = new Vector2(3, 3);
-            //     if (PlayerMovement.TxtI.activeInHierarchy) PlayerMovement.TxtI.SetActive(false);
-            // }
         }
         // else
         if (!validation)
@@ -72,6 +71,10 @@ public class Interactuar : MonoBehaviour
             bkGO = null;
             interactuableActual = null;
             puntero.GetComponent<RectTransform>().sizeDelta = new Vector2(3, 3);
+            PlayerMovement.TxtI.GetComponent<TMP_Text>().text = "Pulsa LMB para interactuar con el objeto equipado \n Pulsa RMB para soltar";
+            // if (CicloDiaYNoche.contadorDias <= CicloDiaYNoche.daysTutorial) {
+            //     PlayerMovement.TxtI.SetActive(true);
+            // }
             if (!PlayerMovement.itemSlot) PlayerMovement.TxtI.SetActive(false);
         }
     }

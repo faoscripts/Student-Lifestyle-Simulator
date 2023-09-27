@@ -13,6 +13,7 @@ public class Necesidades
 
     public void SetNecesidad(float val, float mult)
     {
+        Debug.Log("val = " + val);
         valor += val;
         valor = Mathf.Clamp(valor, 0, valorMaximo);
         multiplicadorVelocidad += mult;
