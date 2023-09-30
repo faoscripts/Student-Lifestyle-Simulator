@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    Vector3 move;
     public float speed;
     public static GameObject itemSlot;
     public static GameObject TxtI;
@@ -25,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput;
+        move = transform.right * horizontalInput + transform.forward * verticalInput;
         controller.SimpleMove(move * speed);
         
         Action();
@@ -36,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
                 Drop();
             }
         }
+
+        HandAnimator();
     }
 
     void Action(){
@@ -110,7 +113,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void EquipItem(ItemController itemC){
         defaultHand.SetActive(false);
-        GameObject handCamera = GameObject.Find("HandCamera");
+        const string HAND_CAMERA_NAME = "HandCameraHolder";
+        GameObject handCamera = GameObject.Find(HAND_CAMERA_NAME);
         GameObject itemInstance = Instantiate(itemC.item.equipoPrefab, handCamera.transform.position, Quaternion.identity, handCamera.transform);
         // itemInstance.transform.parent = handCamera.transform;
         itemInstance.transform.GetChild(0).gameObject.AddComponent<Rigidbody>().isKinematic = true;
@@ -123,6 +127,16 @@ public class PlayerMovement : MonoBehaviour
             child.gameObject.layer = LayerHand;
         }
         itemSlot = itemInstance;
+    }
+
+    void HandAnimator(){
+        Animator anim = GetComponentInChildren<Animator>();
+        if (move == Vector3.zero)
+        {
+            anim.SetFloat("Speed", 0, 1, Time.deltaTime);
+        }else{
+            anim.SetFloat("Speed", 1, 1, Time.deltaTime);
+        }
     }
     
 }
