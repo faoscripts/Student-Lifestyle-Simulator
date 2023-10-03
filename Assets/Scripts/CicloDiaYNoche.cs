@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CicloDiaYNoche : MonoBehaviour
@@ -47,6 +48,7 @@ public class CicloDiaYNoche : MonoBehaviour
     Image nuevoDia;
     [SerializeField]
     TextMeshProUGUI txtDia;
+    public TMP_Text dayText;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +57,8 @@ public class CicloDiaYNoche : MonoBehaviour
         horas = 8;
         // relojActivo = true;
         // StartCoroutine("RelojContador");
-        txtDia.gameObject.SetActive(false);
+        if (txtDia) txtDia.gameObject.SetActive(false);
+        dayText.text = "Día " + contadorDias; // update day in HUD
         exposure = 0;
     }
 
@@ -126,9 +129,10 @@ public class CicloDiaYNoche : MonoBehaviour
         if (TimeOfDay > dayHours) // check if day change
         {
             contadorDias++; // update day counter
-            txtDia.text = "Dia " + contadorDias; // update day text
+            txtDia.text = "Día " + contadorDias; // update day text transition screen
             txtDia.gameObject.SetActive(true); // show day text
             TimeOfDay -= dayHours; // reset day hours
+            dayText.text = "Día " + contadorDias; // update day in HUD
         }
 
         yield return new WaitForSeconds(1);

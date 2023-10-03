@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class NecesidadController : MonoBehaviour
@@ -18,6 +19,7 @@ public class NecesidadController : MonoBehaviour
     Slider sliderSalud;
     [SerializeField]
     Slider[] slidersNecesidades;
+    public static UnityEvent gameOverEv = new UnityEvent();
 
     // Update is called once per frame
     void Update()
@@ -62,6 +64,7 @@ public class NecesidadController : MonoBehaviour
 
         salud -= Time.deltaTime * multiplicadorSalud;
         sliderSalud.value = salud / 100;
+        if (salud <= 0) gameOverEv.Invoke();
     }
 
     public void SetNecesidadPlayer(Necesidades necesidad){

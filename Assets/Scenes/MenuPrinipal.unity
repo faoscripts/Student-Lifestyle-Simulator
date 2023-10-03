@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1694455078}
-  m_IndirectSpecularColor: {r: 0.0020449061, g: 0.0022160048, b: 0.0027220424, a: 1}
+  m_IndirectSpecularColor: {r: 0.012696798, g: 0.013759375, b: 0.016900718, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1692,8 +1692,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01b364fd150812468780f65387a85f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.05
-  sol: {fileID: 1694455076}
+  DirectionalLight: {fileID: 1694455078}
+  TimeOfDay: 0
+  speed: 0
+  hourStartSun: 8
+  hoursDurationSun: 12
   sliderSolLuna: {fileID: 30930368}
   sliderHandle: {fileID: 932739294}
   solSprite: {fileID: 21300000, guid: abbdb2657fccab64d9d3eec8522d6348, type: 3}
@@ -2432,7 +2435,12 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     autoPlay: 1
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
     source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 
 --- !u!4 &1913045882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b43a5d9f2d8ba0a498ecb8519d836955, type: 3}
