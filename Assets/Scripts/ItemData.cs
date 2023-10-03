@@ -16,6 +16,8 @@ public class ItemData : ScriptableObject
     [Header("Equipable")]
     public bool grab;
     public GameObject equipoPrefab;
+    public AnimatorOverrideController AOC;
+    public ParticleSystem particles;
     public bool complex;
     public GameObject relatedGO;
     public GameObject resultGO;

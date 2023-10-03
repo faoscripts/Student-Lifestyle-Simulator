@@ -13,11 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public static bool swDrop = true;
     [SerializeField] GameObject defaultHand;
     [SerializeField] AudioManager am;
-    // GameObject PlayerMovement;
+    Animator handAnimator;
 
     void Start(){
         TxtI = GameObject.FindWithTag(Tags.COMMANDS);
         TxtI.SetActive(false);
+        handAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         move = transform.right * horizontalInput + transform.forward * verticalInput;
         controller.SimpleMove(move * speed);
         
-        Action();
+        StartCoroutine(Action());
         if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
             IInteractuable interactuable = FindObjectOfType<Interactuar>().interactuableActual;
             if (interactuable == null)
@@ -41,13 +42,39 @@ public class PlayerMovement : MonoBehaviour
         HandAnimator();
     }
 
-    void Action(){
+    IEnumerator Action(){
         if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null){
             GameObject item = itemSlot.transform.GetChild(0).gameObject;
+            ItemData itemData = item.GetComponent<ItemController>().item;
+
+            // play item sound
             if(am != null)
             {
-                am.Play(item.GetComponent<ItemController>().item.soundName);
+                am.Play(itemData.soundName);
             }
+
+            // instantiate item particles
+            if (itemData.particles)
+            {
+                ParticleSystem particles = Instantiate(itemData.particles, item.transform);
+                particles.transform.parent = item.transform;
+                particles.transform.localPosition = Vector3.zero;
+                particles.transform.localPosition = new Vector3(0,0.6f,0);
+                particles.Play();
+
+            }
+
+            // play hand animation
+            if (itemData.AOC) handAnimator.runtimeAnimatorController = itemData.AOC;
+            handAnimator.SetTrigger("Action");
+            // wait for animator can get the action clip
+            while (handAnimator.GetNextAnimatorClipInfo(0).Length == 0) {
+                yield return null;
+            }
+            // play item animation
+            Animator itemAnimator = item.GetComponent<Animator>();
+            if (itemAnimator) itemAnimator.SetTrigger("Action");
+            yield return new WaitForSeconds(handAnimator.GetNextAnimatorClipInfo(0)[0].clip.length);
             
             Necesidades[] statsSuma = item.GetComponent<ItemController>().item.statsSuma;
             NecesidadController nc = GetComponent<NecesidadController>();
@@ -71,15 +98,12 @@ public class PlayerMovement : MonoBehaviour
                 if (TxtI.activeInHierarchy) TxtI.SetActive(false);
             }
 
-            ItemData itemData = item.GetComponent<ItemController>().item;
-
             if (itemData.complex && itemData.relatedGO == null && itemData.resultGO) {
                 Destroy(itemSlot);
                 EquipItem(itemData.resultGO.GetComponent<ItemController>());
             }
-
-
         }
+        yield break;
     }
 
     void Drop(){
@@ -130,12 +154,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void HandAnimator(){
-        Animator anim = GetComponentInChildren<Animator>();
         if (move == Vector3.zero)
         {
-            anim.SetFloat("Speed", 0, 1, Time.deltaTime);
+            handAnimator.SetFloat("Speed", 0, 1, Time.deltaTime);
         }else{
-            anim.SetFloat("Speed", 1, 1, Time.deltaTime);
+            handAnimator.SetFloat("Speed", 1, 1, Time.deltaTime);
         }
     }
     

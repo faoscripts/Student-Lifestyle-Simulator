@@ -568,7 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3971680844110897065}
   m_Layer: 6
-  m_Name: Mano Porro
+  m_Name: Mano Canuto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

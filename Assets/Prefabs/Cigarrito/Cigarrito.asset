@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Cigarrito
   m_EditorClassIdentifier: 
   nombre: Cigarro
-  grab: 1
   statsSuma:
   - nombre: Salud Mental
     valor: 10
@@ -22,7 +21,14 @@ MonoBehaviour:
     necesidadVital: 0
   statsRestar: []
   soundName: Fumar
+  grab: 1
   equipoPrefab: {fileID: 6507070001658953185, guid: 83cf8e83616000d4c8e50b0ac5f2b99f, type: 3}
-  itemWeight: 0.3
+  AOC: {fileID: 22100000, guid: f27a2e9f57a5a294daa7b9e79d4982e3, type: 2}
+  particles: {fileID: 4516179736656144235, guid: defc94853c07cda49a73d06081875a55, type: 3}
+  complex: 0
+  relatedGO: {fileID: 0}
+  resultGO: {fileID: 0}
   consumible: 1
   rb: 1
+  itemWeight: 0.3
+  spatialSound: 0

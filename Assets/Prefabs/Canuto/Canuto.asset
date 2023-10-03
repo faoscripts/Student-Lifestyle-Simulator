@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Canuto
   m_EditorClassIdentifier: 
   nombre: Canuto
-  grab: 1
   statsSuma:
   - nombre: Salud Mental
     valor: 30
@@ -22,17 +21,24 @@ MonoBehaviour:
     necesidadVital: 0
   statsRestar:
   - nombre: "Energ\xEDa"
-    valor: 40
+    valor: -40
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
   - nombre: Saciedad
-    valor: 20
+    valor: -20
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
   soundName: Fumar
+  grab: 1
   equipoPrefab: {fileID: 4347642715316700435, guid: e32268779f99dda4a8259505a077100f, type: 3}
-  itemWeight: 0.5
+  AOC: {fileID: 0}
+  particles: {fileID: 4516179736656144235, guid: 3de6ba6670ae9a54cab8959356e04158, type: 3}
+  complex: 0
+  relatedGO: {fileID: 0}
+  resultGO: {fileID: 0}
   consumible: 1
   rb: 1
+  itemWeight: 0.5
+  spatialSound: 0
