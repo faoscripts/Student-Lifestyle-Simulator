@@ -13,11 +13,12 @@ public class OptionsMenu : MonoBehaviour
     public TMP_Text dayTxtHUD;
 
     void Start(){
+        Time.timeScale = 1;
         NecesidadController.gameOverEv.AddListener(GameOver);
     }
 
     void GameOver(){
-        // Time.timeScale = 0;
+        Time.timeScale = 0;
         score.text = CicloDiaYNoche.contadorDias + " DAYS";
         gameOverScreen.SetActive(true);
         Cursor.visible = true;
