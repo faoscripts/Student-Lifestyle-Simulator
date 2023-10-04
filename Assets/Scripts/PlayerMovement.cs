@@ -40,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         HandAnimator();
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            FindObjectOfType<OptionsMenu>().PauseScreen();
+        }
     }
 
     IEnumerator Action(){

@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
     public GameObject gameOverScreen;
+    public GameObject pauseScreen;
     public TMP_Text score;
+    public TMP_Text dayTxtHUD;
 
     void Start(){
         NecesidadController.gameOverEv.AddListener(GameOver);
@@ -23,17 +25,31 @@ public class OptionsMenu : MonoBehaviour
     }
 
     public void RestartGame(){
-        print("enter RestartGame");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ReturnMainMenu(){
-        print("enter ReturnMainMenu");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void ExitGame(){
-        print("enter ExitGame");
         Application.Quit();
+    }
+
+    public void PauseScreen(){
+        pauseScreen.SetActive(!pauseScreen.activeInHierarchy);
+        if (pauseScreen.activeInHierarchy)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+        }else{
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        
+    }
+
+    public void UpdateDayHUD(){
+        dayTxtHUD.text = "Día " + CicloDiaYNoche.contadorDias; // update day in HUD
     }
 }

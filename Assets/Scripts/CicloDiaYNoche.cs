@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -48,7 +49,7 @@ public class CicloDiaYNoche : MonoBehaviour
     Image nuevoDia;
     [SerializeField]
     TextMeshProUGUI txtDia;
-    public TMP_Text dayText;
+    OptionsMenu OP;
 
     // Start is called before the first frame update
     void Start()
@@ -57,9 +58,9 @@ public class CicloDiaYNoche : MonoBehaviour
         horas = 8;
         // relojActivo = true;
         // StartCoroutine("RelojContador");
-        if (txtDia) txtDia.gameObject.SetActive(false);
-        dayText.text = "Día " + contadorDias; // update day in HUD
         exposure = 0;
+        OP = FindObjectOfType<OptionsMenu>();
+        if (OP) OP.UpdateDayHUD(); // update day in HUD
     }
 
     void Update()
@@ -132,7 +133,7 @@ public class CicloDiaYNoche : MonoBehaviour
             txtDia.text = "Día " + contadorDias; // update day text transition screen
             txtDia.gameObject.SetActive(true); // show day text
             TimeOfDay -= dayHours; // reset day hours
-            dayText.text = "Día " + contadorDias; // update day in HUD
+            OP.UpdateDayHUD(); // update day in HUD
         }
 
         yield return new WaitForSeconds(1);
