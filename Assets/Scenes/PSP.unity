@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 229633637}
-  m_IndirectSpecularColor: {r: 0.21493909, g: 0.23292676, b: 0.28610748, a: 1}
+  m_IndirectSpecularColor: {r: 0.020602135, g: 0.022326589, b: 0.02742305, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -387,6 +387,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 879438694935076408, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1339142298058393905, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -627,6 +631,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9107930281143591346, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107930281143591346, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107930281143591346, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9188606129632548328, guid: 8e0bbdbc014e5f34790d93d4da4469da, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -856,10 +872,6 @@ PrefabInstance:
     - target: {fileID: 5409595952882245964, guid: a7cd331ad69dc3846872dc9277ff89c3, type: 3}
       propertyPath: m_Name
       value: MAPA3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8358729648436811517, guid: a7cd331ad69dc3846872dc9277ff89c3, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8675058243408344918, guid: a7cd331ad69dc3846872dc9277ff89c3, type: 3}
       propertyPath: m_RenderMode

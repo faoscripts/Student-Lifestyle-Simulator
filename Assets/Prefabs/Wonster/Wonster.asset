@@ -10,18 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea54fe567c2b4b4598992fb41824cef, type: 3}
-  m_Name: Cervesa
+  m_Name: Wonster
   m_EditorClassIdentifier: 
-  nombre: Cerveza
-  grab: 1
+  nombre: Wonster
   statsSuma:
-  - nombre: "Diversi\xF3n"
-    valor: 15
-    valorMaximo: 0
-    multiplicadorVelocidad: 0
-    necesidadVital: 0
-  - nombre: Salud Mental
-    valor: 10
+  - nombre: "Energ\xEDa"
+    valor: 20
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
@@ -30,10 +24,21 @@ MonoBehaviour:
     valorMaximo: 0
     multiplicadorVelocidad: 0
     necesidadVital: 0
-  statsRestar: []
+  statsRestar:
+  - nombre: Salud Mental
+    valor: -10
+    valorMaximo: 0
+    multiplicadorVelocidad: 0
+    necesidadVital: 0
   soundName: Beber
-  equipoPrefab: {fileID: 9073490231643463803, guid: cbc4849ef3db8da4c9005c6b69a7ac23, type: 3}
-  itemWeight: 1
+  grab: 1
+  equipoPrefab: {fileID: 9073490231643463803, guid: 97c1b4a8d8778a64a91c5c0a2acba796, type: 3}
+  AOC: {fileID: 22100000, guid: 5e75cb5b7be910348969c8ca5fd970c8, type: 2}
+  particles: {fileID: 0}
+  complex: 0
+  relatedGO: {fileID: 0}
+  resultGO: {fileID: 0}
   consumible: 1
   rb: 1
+  itemWeight: 1
   spatialSound: 0

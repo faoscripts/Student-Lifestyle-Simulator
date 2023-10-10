@@ -24,6 +24,7 @@ public class NecesidadController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool necesidadesSaciadas = true;
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             anim.SetBool("abrirCerrar", !anim.GetBool("abrirCerrar"));
@@ -39,6 +40,7 @@ public class NecesidadController : MonoBehaviour
                 if(necesidades[i].valor <= 0)
                 {
                     multiplicadorSalud++;
+                    necesidadesSaciadas = false;
                 }
 
                 slidersNecesidades[i].value = necesidades[i].valor / 100;
@@ -61,6 +63,8 @@ public class NecesidadController : MonoBehaviour
                 slidersNecesidades[i].value = necesidades[i].valor / 100;
             }
         }
+
+        if (necesidadesSaciadas && salud<100) salud += Time.deltaTime * 1;
 
         salud -= Time.deltaTime * multiplicadorSalud;
         sliderSalud.value = salud / 100;
