@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject defaultHand;
     [SerializeField] AudioManager am;
     Animator handAnimator;
+    bool actionEnd = true;
 
     void Start(){
         TxtI = GameObject.FindWithTag(Tags.COMMANDS);
@@ -48,7 +49,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     IEnumerator Action(){
-        if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null){
+        if(Input.GetKeyDown(KeyCode.Mouse0) && itemSlot != null && actionEnd){
+            actionEnd = false;
             GameObject item = itemSlot.transform.GetChild(0).gameObject;
             ItemData itemData = item.GetComponent<ItemController>().item;
 
@@ -107,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(itemSlot);
                 EquipItem(itemData.resultGO.GetComponent<ItemController>());
             }
+            actionEnd = true;
         }
         yield break;
     }
