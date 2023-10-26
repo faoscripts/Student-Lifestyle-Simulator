@@ -1245,6 +1245,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MAPA3
       objectReference: {fileID: 0}
+    - target: {fileID: 6995597532394560030, guid: a7cd331ad69dc3846872dc9277ff89c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358729648436811517, guid: a7cd331ad69dc3846872dc9277ff89c3, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8675058243408344918, guid: a7cd331ad69dc3846872dc9277ff89c3, type: 3}
       propertyPath: m_RenderMode
       value: 1
