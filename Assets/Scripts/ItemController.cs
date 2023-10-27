@@ -45,9 +45,24 @@ public class ItemController : MonoBehaviour, IInteractuable
             {
                 if (status == false)
                 {
+                    Necesidades[] statsSuma = item.statsSuma;
+                    NecesidadController nc = FindObjectOfType<NecesidadController>();
+                    
+                    foreach(Necesidades n in statsSuma)
+                    {
+                        nc.SetNecesidadPlayer(n);
+                    }
+
+                    Necesidades[] statsResta = item.statsRestar;
+                    
+                    foreach(Necesidades n in statsResta)
+                    {
+                        n.valor = n.valor < 0 ? n.valor : -n.valor;
+                        nc.SetNecesidadPlayer(n);
+                    }
                     am.Play(item.soundName);
                     status = true;
-                }else{
+                }else{ // wait end animation ?? how rn need 2 clicks
                     am.Pause(item.soundName);
                     status = false;
                 }

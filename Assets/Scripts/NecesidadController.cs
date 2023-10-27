@@ -54,7 +54,7 @@ public class NecesidadController : MonoBehaviour
                     {
                         if(n.nombre == "Higiene")
                         {
-                            n.valor = n.valorMaximo;
+                            n.valor = 0;
                             break;
                         }
                     }
@@ -74,7 +74,7 @@ public class NecesidadController : MonoBehaviour
     public void SetNecesidadPlayer(Necesidades necesidad){
         List<Necesidades> listNecesidades = new();
         listNecesidades.AddRange(necesidades);
-
+        print("necidadwes necesidad.nombre = " + necesidad.nombre);
         Necesidades nMatch = listNecesidades.Find(x => x.nombre == necesidad.nombre);
         nMatch.SetNecesidad(necesidad.valor, necesidad.multiplicadorVelocidad);
     }
