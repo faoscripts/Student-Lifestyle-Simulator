@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         controller.SimpleMove(move * speed);
         
         StartCoroutine(Action());
-        if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
+        if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null && actionEnd){
             IInteractuable interactuable = FindObjectOfType<Interactuar>().interactuableActual;
             if (interactuable == null)
             {
@@ -115,27 +115,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Drop(){
-        if(Input.GetKeyDown(KeyCode.Mouse1) && itemSlot != null){
-            // if (swDrop) { swDrop = !swDrop; return; }
-            GameObject item = itemSlot.transform.GetChild(0).gameObject;
-            item.transform.parent = null;
-            if(item.GetComponent<Rigidbody>()){
-                item.GetComponent<Rigidbody>().isKinematic = false;
-                item.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength);
-                item.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
-                int LayerDefault = LayerMask.NameToLayer("Default");
-                item.layer = LayerDefault;
-                foreach (Transform child in item.transform)
-                {
-                    child.gameObject.layer = LayerDefault;
-                }
+        // if (swDrop) { swDrop = !swDrop; return; }
+        GameObject item = itemSlot.transform.GetChild(0).gameObject;
+        item.transform.parent = null;
+        if(item.GetComponent<Rigidbody>()){
+            item.GetComponent<Rigidbody>().isKinematic = false;
+            item.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength);
+            item.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+            int LayerDefault = LayerMask.NameToLayer("Default");
+            item.layer = LayerDefault;
+            foreach (Transform child in item.transform)
+            {
+                child.gameObject.layer = LayerDefault;
             }
-            // Destroy(itemSlot.transform.GetChild(1).gameObject);
-            Destroy(itemSlot.gameObject);
-            defaultHand.SetActive(true);
-            if (TxtI.activeInHierarchy) TxtI.SetActive(false);
-            // itemSlot = null;
         }
+        // Destroy(itemSlot.transform.GetChild(1).gameObject);
+        Destroy(itemSlot.gameObject);
+        defaultHand.SetActive(true);
+        if (TxtI.activeInHierarchy) TxtI.SetActive(false);
+        // itemSlot = null;
     }
 
     public void DestroyEquipedItem(){

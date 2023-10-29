@@ -9,7 +9,6 @@ public class ItemController : MonoBehaviour, IInteractuable
 {
     public ItemData item;
     AudioManager am;
-    bool status = false;
     // GameObject PlayerMovement.TxtI;
 
     void Start(){
@@ -43,29 +42,23 @@ public class ItemController : MonoBehaviour, IInteractuable
         }else if(!item.grab){
             if(am != null)
             {
-                if (status == false)
+                am.Pause(item.soundName);
+                Necesidades[] statsSuma = item.statsSuma;
+                NecesidadController nc = FindObjectOfType<NecesidadController>();
+                
+                foreach(Necesidades n in statsSuma)
                 {
-                    Necesidades[] statsSuma = item.statsSuma;
-                    NecesidadController nc = FindObjectOfType<NecesidadController>();
-                    
-                    foreach(Necesidades n in statsSuma)
-                    {
-                        nc.SetNecesidadPlayer(n);
-                    }
-
-                    Necesidades[] statsResta = item.statsRestar;
-                    
-                    foreach(Necesidades n in statsResta)
-                    {
-                        n.valor = n.valor < 0 ? n.valor : -n.valor;
-                        nc.SetNecesidadPlayer(n);
-                    }
-                    am.Play(item.soundName);
-                    status = true;
-                }else{ // wait end animation ?? how rn need 2 clicks
-                    am.Pause(item.soundName);
-                    status = false;
+                    nc.SetNecesidadPlayer(n);
                 }
+
+                Necesidades[] statsResta = item.statsRestar;
+                
+                foreach(Necesidades n in statsResta)
+                {
+                    n.valor = n.valor < 0 ? n.valor : -n.valor;
+                    nc.SetNecesidadPlayer(n);
+                }
+                am.Play(item.soundName);
             }
         }
         //if (InventoryController.instance.imageSlot[i].GetComponent<Image>().sprite == null)
