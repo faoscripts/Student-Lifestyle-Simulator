@@ -117,3 +117,15 @@ MonoBehaviour:
     source: {fileID: 0}
     sourceGO: {fileID: 0}
     tagObject: 
+  - name: VaterCadena
+    clip: {fileID: 8300000, guid: d1f329a4680d88047bed1a0fd011f7ca, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    autoPlay: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    source: {fileID: 0}
+    sourceGO: {fileID: 0}
+    tagObject: 

@@ -428,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 5175716835757649128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.3545, y: -2.92, z: 5.18}
-  m_LocalScale: {x: 62.489998, y: 1, z: 22.365002}
+  m_LocalScale: {x: 70, y: 1, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5175716836565121265}
@@ -450,7 +450,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5175716835757649128}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 3
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4941,7 +4941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7664157894554821985, guid: b5353178ccee10846aeef8ca1488a683, type: 3}
       propertyPath: m_Name
-      value: porro (1)
+      value: canuto (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5353178ccee10846aeef8ca1488a683, type: 3}
@@ -6474,7 +6474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8643871780359129119, guid: c73bec2720e83c448ae9cd412555798a, type: 3}
       propertyPath: m_Name
-      value: papas (1)
+      value: patatas (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8988871748063859365, guid: c73bec2720e83c448ae9cd412555798a, type: 3}
       propertyPath: m_RootOrder

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea54fe567c2b4b4598992fb41824cef, type: 3}
+  m_Name: Radio
+  m_EditorClassIdentifier: 
+  nombre: radio
+  statsSuma: []
+  statsRestar: []
+  soundName: 
+  grab: 1
+  equipoPrefab: {fileID: 97781392511173035, guid: 436bf5d6169c5ce4bb835faf1674380e, type: 3}
+  AOC: {fileID: 0}
+  particles: {fileID: 0}
+  complex: 0
+  relatedGO: {fileID: 0}
+  resultGO: {fileID: 0}
+  consumible: 0
+  rb: 1
+  itemWeight: 4
+  spatialSound: 0

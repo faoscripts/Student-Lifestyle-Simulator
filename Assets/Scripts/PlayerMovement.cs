@@ -15,16 +15,25 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioManager am;
     Animator handAnimator;
     bool actionEnd = true;
+    OptionsMenu optionsMenu;
 
     void Start(){
         TxtI = GameObject.FindWithTag(Tags.COMMANDS);
         TxtI.SetActive(false);
         handAnimator = GetComponentInChildren<Animator>();
+        optionsMenu = FindObjectOfType<OptionsMenu>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            optionsMenu.PauseScreen();
+        }
+
+        if (optionsMenu.pauseScreen.activeInHierarchy) return;
+        
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
@@ -41,11 +50,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         HandAnimator();
-
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            FindObjectOfType<OptionsMenu>().PauseScreen();
-        }
     }
 
     IEnumerator Action(){

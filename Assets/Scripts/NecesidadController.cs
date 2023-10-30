@@ -13,8 +13,7 @@ public class NecesidadController : MonoBehaviour
     [SerializeField]
     Animator anim;
 
-    [SerializeField]
-    Necesidades[] necesidades;
+    public Necesidades[] necesidades;
     [SerializeField]
     Slider sliderSalud;
     [SerializeField]
@@ -74,7 +73,6 @@ public class NecesidadController : MonoBehaviour
     public void SetNecesidadPlayer(Necesidades necesidad){
         List<Necesidades> listNecesidades = new();
         listNecesidades.AddRange(necesidades);
-        print("necidadwes necesidad.nombre = " + necesidad.nombre);
         Necesidades nMatch = listNecesidades.Find(x => x.nombre == necesidad.nombre);
         nMatch.SetNecesidad(necesidad.valor, necesidad.multiplicadorVelocidad);
     }

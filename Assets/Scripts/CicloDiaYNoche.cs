@@ -21,7 +21,7 @@ public class CicloDiaYNoche : MonoBehaviour
     [SerializeField] private Light DirectionalLight;
     // [SerializeField] private LightSO Preset;
     private const float dayHours = 24;
-    [SerializeField, Range(0,dayHours)] private float TimeOfDay;
+    [Range(0,dayHours)] public float TimeOfDay;
     [SerializeField, Range(0,1)] private float speed;
     [SerializeField] int hourStartSun = 8;
     [SerializeField] int hoursDurationSun = 12;
@@ -46,7 +46,7 @@ public class CicloDiaYNoche : MonoBehaviour
 
     [Header("-----Nuevo Dia-----")]
     [SerializeField]
-    Image nuevoDia;
+    public Image nuevoDia;
     [SerializeField]
     TextMeshProUGUI txtDia;
     OptionsMenu OP;

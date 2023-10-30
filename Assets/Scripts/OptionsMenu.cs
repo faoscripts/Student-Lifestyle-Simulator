@@ -53,4 +53,12 @@ public class OptionsMenu : MonoBehaviour
     public void UpdateDayHUD(){
         dayTxtHUD.text = "Día " + CicloDiaYNoche.contadorDias; // update day in HUD
     }
+
+    public void SaveGameUI(){
+        DataSystem.SaveGame();
+    }
+
+    public void LoadGameUI(){
+        FindObjectOfType<DataSystem>().LoadGame();
+    }
 }
