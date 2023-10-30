@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PSP.unity
     guid: 13bf1963e6e270c44850f9e9ce84da5c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Pisito_soltero.unity
     guid: b59b345f32b1e094394bb9b10ece2452
   m_configObjects: {}

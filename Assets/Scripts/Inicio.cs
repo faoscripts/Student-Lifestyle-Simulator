@@ -5,22 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Inicio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Play()
     {
         SceneManager.LoadScene(1);
     }
+
+    public void Load()
+    {
+        DataSystem.newgame = false;
+        SceneManager.LoadScene(1);
+    }
+
     public void Quit()
     {
         Application.Quit();

@@ -13,6 +13,7 @@ public class OptionsMenu : MonoBehaviour
     public TMP_Text dayTxtHUD;
 
     void Start(){
+        if (!DataSystem.newgame) LoadGameUI();
         Time.timeScale = 1;
         NecesidadController.gameOverEv.AddListener(GameOver);
     }

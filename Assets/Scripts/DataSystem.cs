@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class DataSystem : MonoBehaviour
 {
-    public static bool newgame;
+    public static bool newgame = true;
     public GameObject[] interactableGrabList;
     public static void SaveGame(){
         print("save game");

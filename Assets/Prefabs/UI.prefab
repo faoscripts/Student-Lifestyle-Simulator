@@ -4899,7 +4899,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784396595}
         m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
-        m_MethodName: PauseScreen
+        m_MethodName: ReturnMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
