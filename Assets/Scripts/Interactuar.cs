@@ -59,7 +59,7 @@ public class Interactuar : MonoBehaviour
                 bkGO = hit.collider.gameObject.name;
                 interactuableActual = iinteractuableRetraido;
                 puntero.GetComponent<RectTransform>().sizeDelta = new Vector2(6, 6);
-                PlayerMovement.TxtI.GetComponent<TMP_Text>().text = "Pulsa RMB para interactuar";
+                PlayerMovement.TxtI.GetComponent<TMP_Text>().text = "Pulsa clic derecho para interactuar";
                 if (!PlayerMovement.TxtI.activeInHierarchy && CicloDiaYNoche.contadorDias <= CicloDiaYNoche.daysTutorial) PlayerMovement.TxtI.SetActive(true);
                 validation = true;
             }
@@ -71,7 +71,7 @@ public class Interactuar : MonoBehaviour
             bkGO = null;
             interactuableActual = null;
             puntero.GetComponent<RectTransform>().sizeDelta = new Vector2(3, 3);
-            PlayerMovement.TxtI.GetComponent<TMP_Text>().text = "Pulsa LMB para interactuar con el objeto equipado \n Pulsa RMB para soltar";
+            PlayerMovement.TxtI.GetComponent<TMP_Text>().text = "Pulsa clic izquierdo para interactuar con el objeto equipado \n Pulsa clic derecho para soltar";
             // if (CicloDiaYNoche.contadorDias <= CicloDiaYNoche.daysTutorial) {
             //     PlayerMovement.TxtI.SetActive(true);
             // }
