@@ -16,15 +16,19 @@ public class ItemData : ScriptableObject
     [Header("Equipable")]
     public bool grab;
     public GameObject equipoPrefab;
-    public AnimatorOverrideController AOC;
-    public ParticleSystem particles;
+    [Header("Complex Interaction")]
     public bool complex;
     public GameObject relatedGO;
     public GameObject resultGO;
-    public bool consumible;
+    public bool grabed; // instantiate resultGO object in hand
+    [Header("Gravity")]
     public bool rb;
     public float itemWeight;
+    [Header("Other")]
+    public bool consumible;
     public bool spatialSound;
+    public AnimatorOverrideController AOC;
+    public ParticleSystem particles;
 }
 
 public enum EquipType

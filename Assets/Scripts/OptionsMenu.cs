@@ -20,7 +20,7 @@ public class OptionsMenu : MonoBehaviour
 
     void GameOver(){
         Time.timeScale = 0;
-        score.text = CicloDiaYNoche.contadorDias + " DAYS";
+        score.text = CicloDiaYNoche.contadorDias + " DÍAS";
         gameOverScreen.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
