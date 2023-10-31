@@ -19,7 +19,8 @@ public class CameraFP : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (FindObjectOfType<OptionsMenu>().pauseScreen.activeInHierarchy) return;
+        OptionsMenu optionsMenu = FindObjectOfType<OptionsMenu>();
+        if (optionsMenu.pauseScreen.activeInHierarchy || optionsMenu.shopScreen.activeInHierarchy) return;
 
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;

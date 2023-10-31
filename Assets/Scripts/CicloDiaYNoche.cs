@@ -134,6 +134,7 @@ public class CicloDiaYNoche : MonoBehaviour
             txtDia.gameObject.SetActive(true); // show day text
             TimeOfDay -= dayHours; // reset day hours
             OP.UpdateDayHUD(); // update day in HUD
+            FindObjectOfType<PlayerMovement>().money+=20;
         }
 
         yield return new WaitForSeconds(1);

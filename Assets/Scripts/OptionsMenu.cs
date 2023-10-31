@@ -9,6 +9,7 @@ public class OptionsMenu : MonoBehaviour
 {
     public GameObject gameOverScreen;
     public GameObject pauseScreen;
+    public GameObject shopScreen;
     public TMP_Text score;
     public TMP_Text dayTxtHUD;
 

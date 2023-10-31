@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameProduct: Hamburguesa Cruda
   product: {fileID: 7484489483577617414, guid: 45156af128752ad4e837795b17e19cbf, type: 3}
-  price: 0
+  price: 10
   image: {fileID: 0}

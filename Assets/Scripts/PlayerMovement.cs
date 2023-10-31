@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     Animator handAnimator;
     bool actionEnd = true;
     OptionsMenu optionsMenu;
+    [SerializeField] TMP_Text moneyTxt;
+    public float money = 100;
 
     void Start(){
         TxtI = GameObject.FindWithTag(Tags.COMMANDS);
@@ -27,12 +30,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !optionsMenu.shopScreen.activeInHierarchy)
         {
             optionsMenu.PauseScreen();
         }
 
-        if (optionsMenu.pauseScreen.activeInHierarchy) return;
+        if (optionsMenu.pauseScreen.activeInHierarchy || optionsMenu.shopScreen.activeInHierarchy) return;
         
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -50,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         HandAnimator();
+
+        moneyTxt.text = money.ToString() + " €";
     }
 
     IEnumerator Action(){

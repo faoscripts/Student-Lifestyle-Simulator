@@ -26,7 +26,7 @@ public class DataSystem : MonoBehaviour
         GameObject playerBody = FindObjectOfType<NecesidadController>().gameObject;
         CicloDiaYNoche CDN = FindObjectOfType<CicloDiaYNoche>();
         GameData data = new GameData(gameData,playerBody.GetComponent<NecesidadController>().necesidades,
-            playerBody.transform.position,playerBody.transform.rotation,
+            playerBody.GetComponent<PlayerMovement>().money, playerBody.transform.position,playerBody.transform.rotation,
             CicloDiaYNoche.contadorDias,CDN.TimeOfDay);
         
         string json = JsonUtility.ToJson(data,true);
@@ -47,6 +47,7 @@ public class DataSystem : MonoBehaviour
 
         GameObject playerBody = FindObjectOfType<NecesidadController>().gameObject;
         playerBody.GetComponent<NecesidadController>().necesidades=data.playerListNecesidades;
+        playerBody.GetComponent<PlayerMovement>().money = data.money;
         playerBody.transform.position = data.playerPosition;
         playerBody.transform.rotation = data.playerRotation;
 

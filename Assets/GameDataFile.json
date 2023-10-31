@@ -1,17 +1,87 @@
 {
     "listIData": [
         {
-            "nameInteractable": "hamburguesaCruda",
+            "nameInteractable": "cervesa",
             "position": {
-                "x": -7.42066764831543,
-                "y": 2.2674317359924318,
-                "z": 7.114903450012207
+                "x": 17.048017501831056,
+                "y": 0.07226838171482086,
+                "z": 7.925550937652588
             },
             "rotation": {
-                "x": -0.06389002501964569,
-                "y": 0.8167081475257874,
-                "z": -0.02900206297636032,
-                "w": -0.5727694034576416
+                "x": 0.3149299919605255,
+                "y": -0.6440442204475403,
+                "z": -0.6291147470474243,
+                "w": 0.30040112137794497
+            }
+        },
+        {
+            "nameInteractable": "hamburguesaCruda",
+            "position": {
+                "x": 17.90750503540039,
+                "y": 0.268621563911438,
+                "z": 8.177845001220704
+            },
+            "rotation": {
+                "x": -0.2886751592159271,
+                "y": 0.21829231083393098,
+                "z": -0.9279720187187195,
+                "w": 0.08878710865974426
+            }
+        },
+        {
+            "nameInteractable": "cervesa",
+            "position": {
+                "x": 17.170005798339845,
+                "y": 0.07224144041538239,
+                "z": 8.2124662399292
+            },
+            "rotation": {
+                "x": 0.5164874196052551,
+                "y": -0.25418639183044436,
+                "z": 0.4776560068130493,
+                "w": 0.6636828184127808
+            }
+        },
+        {
+            "nameInteractable": "hamburguesaCruda",
+            "position": {
+                "x": 17.627538681030275,
+                "y": 0.1522074043750763,
+                "z": 6.386173725128174
+            },
+            "rotation": {
+                "x": -0.0011551789939403535,
+                "y": -0.14061254262924195,
+                "z": 0.021330127492547036,
+                "w": -0.9898343086242676
+            }
+        },
+        {
+            "nameInteractable": "cervesa",
+            "position": {
+                "x": 18.15732192993164,
+                "y": 0.07225193083286286,
+                "z": 8.014193534851075
+            },
+            "rotation": {
+                "x": -0.504872739315033,
+                "y": -0.7023646235466003,
+                "z": -0.4897213876247406,
+                "w": 0.1093636155128479
+            }
+        },
+        {
+            "nameInteractable": "cervesa",
+            "position": {
+                "x": 17.187902450561525,
+                "y": 0.07225465029478073,
+                "z": 8.433938026428223
+            },
+            "rotation": {
+                "x": 0.38078784942626955,
+                "y": -0.5471460819244385,
+                "z": -0.5914104580879211,
+                "w": -0.45372411608695986
             }
         },
         {
@@ -85,6 +155,20 @@
             }
         },
         {
+            "nameInteractable": "patatas",
+            "position": {
+                "x": -29.640214920043947,
+                "y": 1.5830726623535157,
+                "z": -7.0114359855651859
+            },
+            "rotation": {
+                "x": 0.01957598328590393,
+                "y": -0.023525506258010865,
+                "z": 0.7060443162918091,
+                "w": 0.7075060606002808
+            }
+        },
+        {
             "nameInteractable": "cervesa",
             "position": {
                 "x": -30.77880859375,
@@ -127,7 +211,7 @@
             }
         },
         {
-            "nameInteractable": "vasoAgua",
+            "nameInteractable": "vaso",
             "position": {
                 "x": -8.494917869567871,
                 "y": 2.154686450958252,
@@ -158,7 +242,7 @@
             "nameInteractable": "hamburguesaCruda",
             "position": {
                 "x": 3.2955358028411867,
-                "y": -4502.21435546875,
+                "y": -12662.7783203125,
                 "z": -18.1396484375
             },
             "rotation": {
@@ -172,7 +256,7 @@
             "nameInteractable": "hamburguesaCruda",
             "position": {
                 "x": 3.034536123275757,
-                "y": -4502.31396484375,
+                "y": -12662.876953125,
                 "z": -18.8017578125
             },
             "rotation": {
@@ -186,7 +270,7 @@
             "nameInteractable": "hamburguesaCruda",
             "position": {
                 "x": 2.8885350227355959,
-                "y": -4500.9736328125,
+                "y": -12661.537109375,
                 "z": -18.8046875
             },
             "rotation": {
@@ -200,7 +284,7 @@
             "nameInteractable": "hamburguesaCruda",
             "position": {
                 "x": 3.2955358028411867,
-                "y": -4501.3359375,
+                "y": -12661.8994140625,
                 "z": -18.23046875
             },
             "rotation": {
@@ -225,6 +309,34 @@
             }
         },
         {
+            "nameInteractable": "hamburguesaCocinada",
+            "position": {
+                "x": -7.661578178405762,
+                "y": 2.2468032836914064,
+                "z": 7.121077537536621
+            },
+            "rotation": {
+                "x": 0.0009181797504425049,
+                "y": 0.0000061105238273739818,
+                "z": -0.0015516384737566114,
+                "w": 0.9999984502792358
+            }
+        },
+        {
+            "nameInteractable": "hamburguesaCruda",
+            "position": {
+                "x": -11.329498291015625,
+                "y": 2.359433650970459,
+                "z": 1.7960891723632813
+            },
+            "rotation": {
+                "x": 0.0003279149532318115,
+                "y": -0.0000037295976653695108,
+                "z": -0.0016295305686071516,
+                "w": 0.9999986886978149
+            }
+        },
+        {
             "nameInteractable": "hamburguesaCruda",
             "position": {
                 "x": -11.667366981506348,
@@ -242,72 +354,73 @@
     "playerListNecesidades": [
         {
             "nombre": "Energía",
-            "valor": 89.9242935180664,
+            "valor": 83.08016967773438,
             "valorMaximo": 100.0,
             "multiplicadorVelocidad": 1.0,
             "necesidadVital": true
         },
         {
             "nombre": "Higiene",
-            "valor": 89.9242935180664,
+            "valor": 83.08016967773438,
             "valorMaximo": 100.0,
             "multiplicadorVelocidad": 1.0,
             "necesidadVital": true
         },
         {
             "nombre": "Diversión",
-            "valor": 89.9242935180664,
+            "valor": 83.08016967773438,
             "valorMaximo": 100.0,
             "multiplicadorVelocidad": 1.0,
             "necesidadVital": true
         },
         {
             "nombre": "Salud Mental",
-            "valor": 89.9242935180664,
+            "valor": 83.08016967773438,
             "valorMaximo": 100.0,
             "multiplicadorVelocidad": 1.0,
             "necesidadVital": true
         },
         {
             "nombre": "Saciedad",
-            "valor": 96.66320037841797,
+            "valor": 83.08016967773438,
             "valorMaximo": 100.0,
-            "multiplicadorVelocidad": 1.100000023841858,
+            "multiplicadorVelocidad": 1.0,
             "necesidadVital": true
         },
         {
             "nombre": "Hidratación",
-            "valor": 89.9242935180664,
+            "valor": 83.08016967773438,
             "valorMaximo": 100.0,
             "multiplicadorVelocidad": 1.0,
             "necesidadVital": true
         },
         {
             "nombre": "Caca",
-            "valor": 30.617034912109376,
+            "valor": 16.920015335083009,
             "valorMaximo": 100.0,
-            "multiplicadorVelocidad": 1.100000023841858,
+            "multiplicadorVelocidad": 1.0,
             "necesidadVital": false
         },
         {
             "nombre": "Pis",
-            "valor": 10.075812339782715,
+            "valor": 16.920015335083009,
             "valorMaximo": 100.0,
             "multiplicadorVelocidad": 1.0,
             "necesidadVital": false
         }
     ],
+    "money": 60.0,
     "playerPosition": {
-        "x": -11.159860610961914,
-        "y": 1.5799990892410279,
-        "z": 4.781916618347168
+        "x": 17.850069046020509,
+        "y": 1.5799994468688965,
+        "z": -0.2919619083404541
     },
     "playerRotation": {
         "x": 0.0,
-        "y": -0.6819383502006531,
+        "y": 0.8595119714736939,
         "z": 0.0,
-        "w": -0.7314097285270691
+        "w": 0.5111156702041626
     },
     "day": 1,
-    "time": 11.02274227142334
+    "time": 13.076025009155274
 }
