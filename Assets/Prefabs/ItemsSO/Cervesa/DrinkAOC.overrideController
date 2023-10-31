@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DrinkOC
+  m_Name: DrinkAOC
   m_Controller: {fileID: 9100000, guid: 4bbd63e1936c717488d2c8d929ada5ba, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: bf412ca0e28bc024d9b505921b65dcaf, type: 2}

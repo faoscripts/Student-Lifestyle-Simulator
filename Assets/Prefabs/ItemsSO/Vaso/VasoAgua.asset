@@ -28,12 +28,13 @@ MonoBehaviour:
   soundName: Beber
   grab: 1
   equipoPrefab: {fileID: 9073490231643463803, guid: a1ce0da9223a1624d8d2d4f00bc08d50, type: 3}
-  AOC: {fileID: 0}
-  particles: {fileID: 0}
   complex: 1
   relatedGO: {fileID: 0}
   resultGO: {fileID: 904417408818545601, guid: 3f8331166d23c014ca2ca3669c413b11, type: 3}
-  consumible: 0
+  grabed: 0
   rb: 0
   itemWeight: 0
+  consumible: 0
   spatialSound: 0
+  AOC: {fileID: 0}
+  particles: {fileID: 0}

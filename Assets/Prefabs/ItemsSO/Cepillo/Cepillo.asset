@@ -23,12 +23,13 @@ MonoBehaviour:
   soundName: Cepillarse
   grab: 1
   equipoPrefab: {fileID: 97781392511173035, guid: 5f1bcdd3581c55c449affb3e20c5c1e1, type: 3}
-  AOC: {fileID: 0}
-  particles: {fileID: 0}
   complex: 0
   relatedGO: {fileID: 0}
   resultGO: {fileID: 0}
-  consumible: 0
+  grabed: 0
   rb: 1
   itemWeight: 0.7
+  consumible: 0
   spatialSound: 0
+  AOC: {fileID: 22100000, guid: a506d167def8102439ea2d0aaf9157ab, type: 2}
+  particles: {fileID: 0}

@@ -33,12 +33,13 @@ MonoBehaviour:
   soundName: ComerPapas
   grab: 1
   equipoPrefab: {fileID: 7448156618794012502, guid: 771d2058cfbb9ff4ea5c6e9d719fed44, type: 3}
-  AOC: {fileID: 0}
-  particles: {fileID: 0}
   complex: 1
   relatedGO: {fileID: 4064325701208887732, guid: 8ca0360487b139f46b82f7f06c1a6cd7, type: 3}
   resultGO: {fileID: 7484489483577617414, guid: c8b32f75243dbbd419c7b96982201817, type: 3}
-  consumible: 1
+  grabed: 0
   rb: 1
   itemWeight: 1
+  consumible: 1
   spatialSound: 0
+  AOC: {fileID: 22100000, guid: f27a2e9f57a5a294daa7b9e79d4982e3, type: 2}
+  particles: {fileID: 0}

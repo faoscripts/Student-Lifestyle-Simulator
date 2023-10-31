@@ -22,8 +22,7 @@ public class OptionsMenu : MonoBehaviour
         Time.timeScale = 0;
         score.text = CicloDiaYNoche.contadorDias + " DÍAS";
         gameOverScreen.SetActive(true);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        ShowCursor();
     }
 
     public void RestartGame(){
@@ -42,11 +41,9 @@ public class OptionsMenu : MonoBehaviour
         pauseScreen.SetActive(!pauseScreen.activeInHierarchy);
         if (pauseScreen.activeInHierarchy)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            ShowCursor();
         }else{
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            HideCursor();
         }
         
     }
@@ -61,5 +58,15 @@ public class OptionsMenu : MonoBehaviour
 
     public void LoadGameUI(){
         FindObjectOfType<DataSystem>().LoadGame();
+    }
+
+    public static void ShowCursor(){
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public static void HideCursor(){
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

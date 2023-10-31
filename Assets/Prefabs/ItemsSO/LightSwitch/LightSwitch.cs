@@ -13,6 +13,4 @@ public class LightSwitch : MonoBehaviour, IInteractuable
             light.enabled = !light.enabled;
         }
     }
-    // Start is called before the first frame update
-
 }
