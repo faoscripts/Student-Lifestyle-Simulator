@@ -36,5 +36,5 @@ MonoBehaviour:
   itemWeight: 0
   consumible: 0
   spatialSound: 0
-  AOC: {fileID: 0}
+  AOC: {fileID: 22100000, guid: 9dc98e381456f764289a2040008a713a, type: 2}
   particles: {fileID: 0}

@@ -21,10 +21,10 @@ MonoBehaviour:
   complex: 1
   relatedGO: {fileID: 5834114689508729851, guid: 30b2f5c2bd67d464f8a899149cb86a36, type: 3}
   resultGO: {fileID: 7682333313484251750, guid: 8a4a4167c0f3d9d4b907dd4c5ba33160, type: 3}
-  graped: 1
+  grabed: 1
   rb: 0
   itemWeight: 0
   consumible: 0
   spatialSound: 0
-  AOC: {fileID: 0}
+  AOC: {fileID: 22100000, guid: 9dc98e381456f764289a2040008a713a, type: 2}
   particles: {fileID: 0}
