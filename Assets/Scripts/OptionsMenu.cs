@@ -12,10 +12,12 @@ public class OptionsMenu : MonoBehaviour
     public GameObject shopScreen;
     public TMP_Text score;
     public TMP_Text dayTxtHUD;
+    public TMP_Text infoTxt;
 
     void Start(){
         if (!DataSystem.newgame) LoadGameUI();
         Time.timeScale = 1;
+        infoTxt.gameObject.SetActive(false);
         NecesidadController.gameOverEv.AddListener(GameOver);
     }
 
@@ -54,6 +56,7 @@ public class OptionsMenu : MonoBehaviour
     }
 
     public void SaveGameUI(){
+        StartCoroutine(InfoText("Partida guardada", 2));
         DataSystem.SaveGame();
     }
 
@@ -69,5 +72,12 @@ public class OptionsMenu : MonoBehaviour
     public static void HideCursor(){
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    IEnumerator InfoText(string text, float secondsWait){
+        infoTxt.gameObject.SetActive(true);
+        infoTxt.text = text;
+        yield return new WaitForSeconds(secondsWait);
+        infoTxt.gameObject.SetActive(false);
     }
 }

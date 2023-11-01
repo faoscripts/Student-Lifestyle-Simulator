@@ -178,8 +178,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3414259940072161633}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.67, y: 3, z: 0}
+  m_LocalRotation: {x: 0, y: 0.9731905, z: 0, w: -0.23000066}
+  m_LocalPosition: {x: 3.0923634, y: 1.5799998, z: 2.8360314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -223,6 +223,7 @@ MonoBehaviour:
   defaultHand: {fileID: 5436284853786302169}
   am: {fileID: 0}
   moneyTxt: {fileID: 1617336851974186034}
+  money: 100
 --- !u!114 &8921483282723889973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +614,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1318386253676719070, guid: 4dbf6ecb27e204245b14786ffedd3e4b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2750244
+      objectReference: {fileID: 0}
     - target: {fileID: 1509276743029433078, guid: 4dbf6ecb27e204245b14786ffedd3e4b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -61.69101
@@ -641,6 +646,10 @@ PrefabInstance:
       propertyPath: productsList.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: 6cb2d9f15f27fa04c8dd9f0e9f190340, type: 2}
+    - target: {fileID: 5126875588626915676, guid: 4dbf6ecb27e204245b14786ffedd3e4b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2750244
+      objectReference: {fileID: 0}
     - target: {fileID: 6494318572214282699, guid: 4dbf6ecb27e204245b14786ffedd3e4b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -7,7 +7,7 @@ public class Pc : MonoBehaviour, IInteractuable
 {
     GameObject PCShop;
     void Start(){
-        PCShop = FindObjectOfType<PCShop>().gameObject;
+        PCShop = FindObjectOfType<OptionsMenu>().shopScreen;
         PCShop.SetActive(false);
     }
 
