@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +12,8 @@ public class PCShop : MonoBehaviour
     [SerializeField] GameObject deliveryPoint;
     [SerializeField] TMP_Text moneyTxt;
     PlayerMovement player;
+    bool boolProduct;
+    
     void Start(){
         player = FindObjectOfType<PlayerMovement>();
         moneyTxt.text = player.money.ToString() + " €";
@@ -29,12 +30,18 @@ public class PCShop : MonoBehaviour
 
     public void BuyProduct(ProductSO product){
         if (player.money - product.price <= 0) return;
+        boolProduct = true;
         player.money -= product.price;
         moneyTxt.text = player.money.ToString() + " €";
         Instantiate(product.product,deliveryPoint.transform.position,Quaternion.identity);
     }
 
     public void ExitShop(){
+        if(boolProduct){
+            AudioManager am = FindObjectOfType<AudioManager>();
+            am.Play("Timbre");
+        }
+        boolProduct = false;
         FindObjectOfType<Pc>().Exit();
     }
 }
