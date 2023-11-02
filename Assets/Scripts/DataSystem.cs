@@ -40,7 +40,6 @@ public class DataSystem : MonoBehaviour
     }
 
     public void LoadGame(){
-        print("load game");
         StartCoroutine(nameof(LoadScreen));
         CleanMap();
         GameData data = LoadFromJson();
@@ -73,8 +72,9 @@ public class DataSystem : MonoBehaviour
     }
 
     IEnumerator LoadScreen(){
-        CicloDiaYNoche CDN = FindObjectOfType<CicloDiaYNoche>();
         OptionsMenu omenu = FindObjectOfType<OptionsMenu>();
+        if (omenu.pauseScreen.activeInHierarchy) omenu.PauseScreen();
+        CicloDiaYNoche CDN = FindObjectOfType<CicloDiaYNoche>();
         Image nuevoDia = CDN.nuevoDia;
         while (nuevoDia.color.a < 1)
         {
@@ -82,9 +82,7 @@ public class DataSystem : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
 
-        if (omenu.pauseScreen.activeInHierarchy) omenu.PauseScreen();
-
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
         while (nuevoDia.color.a > 0)
         {

@@ -56,11 +56,11 @@ public class CicloDiaYNoche : MonoBehaviour
     {
         contadorDias = 1;
         horas = 8;
-        // relojActivo = true;
-        // StartCoroutine("RelojContador");
         exposure = 0;
         OP = FindObjectOfType<OptionsMenu>();
         if (OP) OP.UpdateDayHUD(); // update day in HUD
+        nuevoDia.gameObject.SetActive(true);
+        txtDia.gameObject.SetActive(false);
     }
 
     void Update()
