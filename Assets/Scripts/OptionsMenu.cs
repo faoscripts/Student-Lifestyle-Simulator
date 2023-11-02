@@ -12,6 +12,7 @@ public class OptionsMenu : MonoBehaviour
     public GameObject shopScreen;
     public TMP_Text score;
     public TMP_Text dayTxtHUD;
+    public TMP_Text txtDayFade;
     public TMP_Text infoTxt;
 
     void Start(){
@@ -19,6 +20,7 @@ public class OptionsMenu : MonoBehaviour
         Time.timeScale = 1;
         infoTxt.gameObject.SetActive(false);
         NecesidadController.gameOverEv.AddListener(GameOver);
+        txtDayFade.gameObject.SetActive(false);
     }
 
     void GameOver(){
@@ -51,10 +53,6 @@ public class OptionsMenu : MonoBehaviour
         
     }
 
-    public void UpdateDayHUD(){
-        dayTxtHUD.text = "Día " + CicloDiaYNoche.contadorDias; // update day in HUD
-    }
-
     public void SaveGameUI(){
         StartCoroutine(InfoText("Partida guardada", 2));
         DataSystem.SaveGame();
@@ -79,5 +77,11 @@ public class OptionsMenu : MonoBehaviour
         infoTxt.text = text;
         yield return new WaitForSeconds(secondsWait);
         infoTxt.gameObject.SetActive(false);
+    }
+
+    public void UpdateDay(int newDay){
+        CicloDiaYNoche.contadorDias = newDay; // update day counter
+        txtDayFade.text = "Día " + newDay; // update day text transition screen
+        dayTxtHUD.text = "Día " + newDay; // update day in HUD
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -48,19 +49,17 @@ public class CicloDiaYNoche : MonoBehaviour
     [SerializeField]
     public Image nuevoDia;
     [SerializeField]
-    TextMeshProUGUI txtDia;
     OptionsMenu OP;
 
     // Start is called before the first frame update
     void Start()
     {
-        contadorDias = 1;
         horas = 8;
         exposure = 0;
         OP = FindObjectOfType<OptionsMenu>();
-        if (OP) OP.UpdateDayHUD(); // update day in HUD
+        if (!OP) return;
+        OP.UpdateDay(1);
         nuevoDia.gameObject.SetActive(true);
-        txtDia.gameObject.SetActive(false);
     }
 
     void Update()
@@ -129,16 +128,14 @@ public class CicloDiaYNoche : MonoBehaviour
 
         if (TimeOfDay > dayHours) // check if day change
         {
-            contadorDias++; // update day counter
-            txtDia.text = "Día " + contadorDias; // update day text transition screen
-            txtDia.gameObject.SetActive(true); // show day text
+            OP.UpdateDay(contadorDias++);
+            OP.txtDayFade.gameObject.SetActive(true); // show day text
             TimeOfDay -= dayHours; // reset day hours
-            OP.UpdateDayHUD(); // update day in HUD
             FindObjectOfType<PlayerMovement>().money+=20;
         }
 
         yield return new WaitForSeconds(1);
-        txtDia.gameObject.SetActive(false);
+        OP.txtDayFade.gameObject.SetActive(false);
 
         while (nuevoDia.color.a > 0)
         {

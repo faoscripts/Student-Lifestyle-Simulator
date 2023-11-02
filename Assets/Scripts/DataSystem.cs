@@ -50,8 +50,9 @@ public class DataSystem : MonoBehaviour
         playerBody.transform.position = data.playerPosition;
         playerBody.transform.rotation = data.playerRotation;
 
+        FindObjectOfType<OptionsMenu>().UpdateDay(data.day);
+        
         CicloDiaYNoche CDN = FindObjectOfType<CicloDiaYNoche>();
-        CicloDiaYNoche.contadorDias = data.day;
         CDN.TimeOfDay = data.time;
 
         foreach (InteractableData interactable in data.listIData)
@@ -82,7 +83,7 @@ public class DataSystem : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         while (nuevoDia.color.a > 0)
         {
