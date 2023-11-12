@@ -15,4 +15,4 @@ MonoBehaviour:
   nameProduct: Wonster
   product: {fileID: 6418049225514328251, guid: caaf195d750f5eb4e8a7f625548e8cd3, type: 3}
   price: 5
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 871426e7249c93d4a93f2f93ca83a938, type: 3}

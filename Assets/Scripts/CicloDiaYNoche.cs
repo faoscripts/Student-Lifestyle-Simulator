@@ -128,10 +128,10 @@ public class CicloDiaYNoche : MonoBehaviour
 
         if (TimeOfDay > dayHours) // check if day change
         {
-            OP.UpdateDay(contadorDias++);
+            OP.UpdateDay(contadorDias+1);
             OP.txtDayFade.gameObject.SetActive(true); // show day text
             TimeOfDay -= dayHours; // reset day hours
-            FindObjectOfType<PlayerMovement>().money+=20;
+            if (contadorDias%7==0) FindObjectOfType<PlayerMovement>().money+=10;
         }
 
         yield return new WaitForSeconds(1);

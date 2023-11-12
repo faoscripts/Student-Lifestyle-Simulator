@@ -15,4 +15,4 @@ MonoBehaviour:
   nameProduct: Cervesa
   product: {fileID: 1040392427857095302, guid: 880fe4e217ab47446aae533d51456054, type: 3}
   price: 5
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: de96947d796f3f2448df86bcd7e99503, type: 3}

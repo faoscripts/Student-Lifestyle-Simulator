@@ -23,7 +23,7 @@ public class PCShop : MonoBehaviour
             productCardInstance.transform.SetParent(productsUI.transform, false);
             productCardInstance.GetComponentsInChildren<TMP_Text>()[0].text = product.nameProduct;
             productCardInstance.GetComponentsInChildren<TMP_Text>()[1].text = product.price.ToString() + " €";
-            if (product.image) productCardInstance.GetComponentInChildren<Image>().sprite = product.image;
+            if (product.image) productCardInstance.GetComponentsInChildren<Image>()[1].sprite = product.image;
             productCardInstance.GetComponentInChildren<Button>().onClick.AddListener(() => BuyProduct(product));
         }
     }
