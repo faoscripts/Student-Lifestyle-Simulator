@@ -47,8 +47,13 @@ public class DataSystem : MonoBehaviour
         GameObject playerBody = FindObjectOfType<NecesidadController>().gameObject;
         playerBody.GetComponent<NecesidadController>().necesidades=data.playerListNecesidades;
         playerBody.GetComponent<PlayerMovement>().money = data.money;
+
+        playerBody.SetActive(false);
+
         playerBody.transform.position = data.playerPosition;
         playerBody.transform.rotation = data.playerRotation;
+
+        playerBody.SetActive(true);
 
         FindObjectOfType<OptionsMenu>().UpdateDay(data.day);
         

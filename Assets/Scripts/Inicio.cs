@@ -14,6 +14,7 @@ public class Inicio : MonoBehaviour
 
     public void Play()
     {
+        DataSystem.newgame = true;
         SceneManager.LoadScene(1);
     }
 
